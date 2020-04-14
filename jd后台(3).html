@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>后台</title>
+		<link rel="stylesheet" type="text/css" href="layui-v2.5.5/layui/css/layui.css" />
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+
+		<script type="text/javascript" charset="UTF-8" src="layui-v2.5.5/layui/layui.js"></script>
+
+	</head>
+
+	<body class="layui-layout-body">
+		<div class="layui-layout layui-layout-admin">
+			<div class="layui-header">
+				<div class="layui-logo">京东后台管理</div>
+				<!-- 头部区域（可配合layui已有的水平导航） -->
+				<!--<ul class="layui-nav layui-layout-left">
+      <li class="layui-nav-item"><a href="">控制台</a></li>
+      <li class="layui-nav-item"><a href="">商品管理</a></li>
+      <li class="layui-nav-item"><a href="">用户</a></li>
+      <li class="layui-nav-item">
+        <a href="javascript:;">其它系统</a>
+        <dl class="layui-nav-child">
+          <dd><a href="">邮件管理</a></dd>
+          <dd><a href="">消息管理</a></dd>
+          <dd><a href="">授权管理</a></dd>
+        </dl>
+      </li>
+    </ul>-->
+				<ul class="layui-nav layui-layout-right">
+					<!--<li class="layui-nav-item">
+        <a href="javascript:;">
+          <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
+          贤心
+        </a>
+        <dl class="layui-nav-child">
+          <dd><a href="">基本资料</a></dd>
+          <dd><a href="">安全设置</a></dd>
+        </dl>
+      </li>-->
+					<li class="layui-nav-item">
+						<a href="">退出</a>
+					</li>
+				</ul>
+			</div>
+
+			<div class="layui-side layui-bg-black">
+				<div class="layui-side-scroll">
+					<!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+					<ul class="layui-nav layui-nav-tree" lay-filter="test">
+						<li class="layui-nav-item layui-nav-itemed layui-this">
+							<a class="" href="jd-index.html">主页</a>
+						</li>
+						<li class="layui-nav-item layui-nav-itemed">
+							<a class="" href="javascript:;">设置</a>
+							<dl class="layui-nav-child">
+								<dd>
+									<a href="jd后台(1).html">幻灯片设置</a>
+								</dd>
+								<dd>
+									<a href="jd后台(2).html">众筹分类设置</a>
+								</dd>
+								<dd>
+									<a href="jd后台(3).html">商品分类设置</a>
+								</dd>
+
+							</dl>
+						</li>
+						<li class="layui-nav-item">
+							<a href="javascript:;">解决方案</a>
+							<dl class="layui-nav-child">
+								<dd>
+									<a href="javascript:;">列表一</a>
+								</dd>
+
+							</dl>
+						</li>
+
+					</ul>
+				</div>
+			</div>
+
+			<div class="layui-body">
+				<!-- 内容主体区域 -->
+				<div style="padding: 15px;">
+					<script type="text/html" id="form1">
+						<form class="layui-form" style="padding: 20px;">
+							<!-- 提示：如果你不想用form，你可以换成div等任何一个普通元素 -->
+							<div class="layui-form-item">
+								<label class="layui-form-label">标题：</label>
+								<div class="layui-input-block">
+									<input type="text" name="Name" placeholder="请输入名字" autocomplete="off" class="layui-input" id="DisplayName">
+								</div>
+							</div>
+							<!--<div class="layui-form-item">
+								<label class="layui-form-label">时间：</label>
+								<div class="layui-input-block">
+									<input type="text" name="CreatTime" placeholder="请输入时间（只能输入时间）" autocomplete="off" class="layui-input" id="CreatTime">
+								</div>
+							</div>-->
+							<div class="layui-form-item">
+								<label class="layui-form-label">Money：</label>
+								<div class="layui-input-block">
+									<input type="text" name="Money" placeholder="请输入Money" autocomplete="off" class="layui-input">
+								</div>
+							</div>
+
+							<div class="layui-form-item">
+								<label class="layui-form-label">NowMoney：</label>
+								<div class="layui-input-block">
+
+									<input type="text" name="NowMoney" placeholder="请输入NowMoney" autocomplete="off" class="layui-input">
+
+								</div>
+							</div>
+							<div class="layui-form-item">
+								<label class="layui-form-label">人数：</label>
+								<div class="layui-input-block">
+
+									<input type="text" name="PeopleNum" placeholder="请输入人数" autocomplete="off" class="layui-input">
+
+								</div>
+							</div>
+							<div class="layui-form-item">
+								<label class="layui-form-label">赞：</label>
+								<div class="layui-input-block">
+
+									<input type="text" name="zan" placeholder="请输入赞的数量" autocomplete="off" class="layui-input">
+
+								</div>
+							</div>
+							<div class="layui-form-item">
+								<label class="layui-form-label">关注：</label>
+								<div class="layui-input-block">
+
+									<input type="text" name="guanzhu" placeholder="请输入关注的数量" autocomplete="off" class="layui-input">
+
+								</div>
+							</div>
+							<div class="layui-form-item">
+								<label class="layui-form-label">结束时间：</label>
+								<div class="layui-input-block">
+
+									<input type="text" name="EndTime" placeholder="请输入结束的时间" autocomplete="off" class="layui-input">
+
+								</div>
+							</div>
+							<div class="layui-form-item">
+								<label class="layui-form-label">上传：</label>
+								<div class="layui-input-block">
+
+									<button type="button" class="layui-btn" id="test1">
+                                              <i class="layui-icon">&#xe67c;</i>上传最小图片
+                                            
+                                             </button>
+									<div class="layui-input-block" style="display: none;">
+										<input type="text" name="MinImg" placeholder="" autocomplete="off" class="layui-input">
+									</div>
+								</div>
+
+							</div>
+							<div class="layui-form-item">
+								<label class="layui-form-label">上传：</label>
+								<div class="layui-input-block">
+
+									<button type="button" class="layui-btn" id="test2">
+                                              <i class="layui-icon">&#xe67c;</i>上传最大图片
+                                            
+                                             </button>
+									<div class="layui-input-block" style="display: none;">
+										<input type="text" name="MaxImg" placeholder="" autocomplete="off" class="layui-input">
+									</div>
+								</div>
+
+							</div>
+
+							<div class="layui-form-item">
+								<div class="layui-input-block">
+									<button class="layui-btn" lay-submit lay-filter="*">立即提交</button>
+									<button type="reset" class="layui-btn layui-btn-primary">重置</button>
+								</div>
+							</div>
+							<!-- 更多表单结构排版请移步文档左侧【页面元素-表单】一项阅览 -->
+						</form>
+					</script>
+					<div class="layui-inline">
+						<button class="layui-btn layuiadmin-btn-useradmin " lay-submit="" lay-filter="LAY-user-front-search">
+                                         <i class="layui-icon layui-icon-search layuiadmin-button-btn"></i>
+                                </button>
+						<button class="layui-btn layuiadmin-btn-useradmin" lay-submit="" onclick="Open('add')">
+                                         <i class="layui-icon layui-icon-add-1 layuiadmin-button-btn"></i>
+                        </button>
+					</div>
+
+					<table class="layui-hide" id="test" lay-filter="test">
+
+					</table>
+					<script type="text/html" id="toolbarDemo">
+						<!--<div class="layui-btn-container">
+
+							<button class="layui-btn layui-btn-sm" lay-event="getCheckLength">批量删除</button>
+
+						</div>-->
+						<div class="layui-table-tool-temp">
+							<div class="layui-inline" lay-event="delete"><i class="layui-icon layui-icon-delete" ></i></div>
+						</div>
+					</script>
+
+					<script type="text/html" id="barDemo">
+						<a class="layui-btn layui-btn-sm layui-btn layui-btn-warm " lay-event="edit">编辑</a>
+						<a class="layui-btn layui-btn-sm layui-btn layui-btn-danger" lay-event="delete">删除</a>
+					</script>
+
+				</div>
+
+			</div>
+
+			<div class="layui-footer">
+				<!-- 底部固定区域 -->
+				© layui.com - 底部固定区域
+			</div>
+		</div>
+		<script>
+			function fd(e) {
+				layer.open({
+					title: '预览',
+					type: 1,
+					closeBtn: 2,
+					area: ['30%'],
+					shade: 0.6,
+					btn: ['关闭'],
+					content: '<img src=' + e.src + ' width=100% heigt=100%>'
+
+				})
+			}
+			//JavaScript代码区域
+
+			layui.use('element', function() {
+				var element = layui.element;
+
+			});
+			layui.use('table', function() {
+				var table = layui.table;
+
+				//监听单元格编辑
+				table.on('toolbar(test)', function(obj) {
+					var checkStatus = table.checkStatus(obj.config.id),
+						data = checkStatus.data; //获取选中的数据
+					switch(obj.event) {
+						//    case 'add':
+						//      layer.msg('添加');
+						//    break;
+						//    case 'update':
+						//      if(data.length === 0){
+						//        layer.msg('请选择一行');
+						//      } else if(data.length > 1){
+						//        layer.msg('只能同时编辑一个');
+						//      } else {
+						//        layer.alert('编辑 [id]：'+ checkStatus.data[0].id);
+						//      }
+						//    break;
+						case 'delete':
+							if(data.length === 0) {
+								layer.msg('请选择一行');
+							} else if(data.length > 1) {
+								layer.msg('暂时只能批量删除一个');
+							} else {
+								console.log(data[0].Id)
+								layer.confirm('真的删除行么', function(index) {
+									$.ajax({
+										type: "get",
+										url: "http://47.97.123.93:81/api/Details/DelDetails",
+										data: {
+											Id: data[0].Id
+										},
+										success: function(data) {
+											setTimeout('window.location.reload()', 500);
+											if(data.ResultCode == 1) {
+												obj.del(); //删除对应行（tr）的DOM结构
+												layer.close(index);
+
+												//向服务端发送删除指令
+												layer.msg("删除成功");
+
+											} else {
+												layer.msg(data.Message)
+											}
+
+										}
+									});
+								});
+								//        layer.msg('删除成功');
+							}
+							break;
+					};
+				});
+
+				table.render({
+					elem: '#test',
+					toolbar: '#toolbarDemo',
+					url: 'http://47.97.123.93:81/api/Details/GetDetails',
+
+					cellMinWidth: 80 //全局定义常规单元格的最小宽度，layui 2.2.1 新增
+						,
+					height: 'full-195',
+					page: true, //开启分页	
+					method: "get",
+					//					parseData:function(res) {
+					//						console.log(res.data)
+					//						return {
+					//							"code":0,
+					//							"msg":"",
+					//							"count":6,
+					//							"data":[res.data]
+					//							
+					//						}
+					//					},
+					cols: [
+						[{
+								type: 'checkbox',
+								fixed: 'left'
+							}, {
+								field: 'Id',
+								title: 'ID',
+								align: 'center',
+								sort: true,
+								width: 70
+							}, 
+							
+							{
+								field: 'AddTime',
+								title: '开始时间',
+
+								align: 'center',
+
+								templet: function(d) {
+
+									var time = d.AddTime.substring(0, 16)
+
+									var sj = time.split('T')[0] + " " + time.split('T')[1]
+									//									console.log(time)
+									return sj
+
+								}
+							}, {
+								field: 'EndTime',
+								title: '结束时间',
+								sort: true,
+
+								align: 'center',
+								templet: function(e) {
+									if(e.EndTime == null) {
+										return null
+									} else {
+										var time2 = e.EndTime.substring(0, 16)
+										var sj2 = time2.split('T')[0] + " " + time2.split('T')[1]
+										console.log(time2)
+										return sj2
+									}
+
+								}
+							}, 
+							{
+								field: 'Name',
+								title: '名称',
+								align: 'center',
+								sort: true,
+								width: 70
+
+							},
+							{
+								field: 'Money',
+								title: 'Money',
+								align: 'center',
+								width: 80
+							}, {
+								field: 'NowMoney',
+								title: 'NowMoney',
+								align: 'center',
+								sort: true,
+								width: 80
+
+							},
+							{
+								field: 'PeopleNum',
+								title: '人数',
+								align: 'center',
+								sort: true,
+								width: 70
+
+							},
+							{
+								field: 'zan',
+								title: '赞',
+								align: 'center',
+								sort: true,
+								width: 70
+
+							},
+							{
+								field: 'guanzhu',
+								title: '关注',
+								align: 'center',
+								sort: true,
+								width: 70
+
+							},
+							
+							{
+								field: 'MinImg',
+								title: '最小图片',
+								align: 'center',
+								sort: true,
+								templet: function(data) {
+
+									return `<img src='${data.MinImg}' onclick="fd(this)">`
+
+								}
+
+							},
+							{
+								field: 'MaxImg',
+								title: '最大图片',
+								align: 'center',
+								sort: true,
+								templet: function(data) {
+									console.log(data.MaxImg)
+
+									return `<img src='${data.MaxImg}' onclick="fd(this)">`
+
+								}
+
+							},
+
+							{
+								field: 'caozuo',
+								title: '操作',
+								sort: true,
+								toolbar: '#barDemo',
+								align: 'center'
+							}
+
+						]
+					]
+				});
+
+				table.on('tool(test)', function(obj) { //注：tool 是工具条事件名，test 是 table 原始容器的属性 lay-filter="对应的值"
+					var data = obj.data, //获得当前行数据
+
+						layEvent = obj.event; //获得 lay-event 对应的值
+					//					console.log(data.Id)
+					if(layEvent === 'delete') {
+						layer.confirm('真的删除行么', function(index) {
+
+							$.ajax({
+								type: "get",
+								url: "http://47.97.123.93:81/api/Details/DelDetails",
+								data: {
+									Id: data.Id
+								},
+								success: function(data) {
+									setTimeout('window.location.reload()', 500);
+									if(data.ResultCode == 1) {
+										obj.del(); //删除对应行（tr）的DOM结构
+										layer.close(index);
+
+										//向服务端发送删除指令
+										layer.msg("删除成功");
+
+									} else {
+										layer.msg(data.Message)
+									}
+
+								}
+							});
+						});
+					} else if(layEvent === 'edit') {
+
+						Open('edit', data)
+
+					}
+
+				});
+			});
+			// 去判定添加或修改
+			function Open(caozuo, rowdata) {
+				//				console.log(rowdata)
+				if(caozuo == "add") {
+					layer.open({
+						title: '添加幻灯片',
+						type: 1,
+						content: $('#form1').html(),
+						closeBtn: 2 //bton样式
+
+					});
+
+					var f = document.forms[0]; //获取表单DOM
+					f.reset(); //使用reset()函数 
+					//上传图片
+					layui.use('upload', function() {
+						var upload = layui.upload;
+
+						//执行实例
+						var uploadInst = upload.render({
+							elem: '#test1', //绑定元素							
+							method: 'post',
+							accept: 'imgages',
+							url: 'http://47.97.123.93:81/api/Banner/Uploadimg', //上传接口
+							done: function(res) {
+								//上传完毕回调
+								if(res.ResultCode == 1) {
+									var src = 'http://47.97.123.93:81' + res.Src
+									$("[name='MinImg']").val(src)
+									layer.msg("上传图片成功")
+									console.log(src)
+								}
+								//							console.log(res)
+							},
+							error: function() {
+								//请求异常回调
+							}
+						});
+					});
+					layui.use('upload', function() {
+						var upload = layui.upload;
+
+						//执行实例
+						var uploadInst = upload.render({
+							elem: '#test2', //绑定元素							
+							method: 'post',
+							accept: 'imgages',
+							url: 'http://47.97.123.93:81/api/Banner/Uploadimg', //上传接口
+							done: function(res) {
+								//上传完毕回调
+								if(res.ResultCode == 1) {
+									var src = 'http://47.97.123.93:81' + res.Src
+									$("[name='MaxImg']").val(src)
+									layer.msg("上传图片成功")
+									console.log(src)
+								}
+
+							},
+							error: function() {
+								//请求异常回调
+							}
+						});
+					});
+					//赋值时间在endtime 的内容框
+					var myDate = new Date();
+					var sjo = myDate.toLocaleString('chinese', {
+						hour12: false
+					})
+
+					$("[name='EndTime']").val(sjo)
+					//										console.log(sjo)
+
+				} else if(caozuo == "edit") {
+					
+										layer.open({
+											title: '编辑幻灯片',
+											type: 1,
+											content: $('#form1').html(),
+											closeBtn: 2, //bton样式
+											success: function() {
+					
+												//				console.log(rowdata.Enable)
+						
+								
+												$("[name='Money']").val(rowdata.Money)
+												$("[name='NowMoney']").val(rowdata.NowMoney)
+												$("[name='zan']").val(rowdata.zan)
+												$("[name='guanzhu']").val(rowdata.guanzhu)
+												$("[name='PeopleNum']").val(rowdata.PeopleNum)
+												$("[name='MinImg']").val(rowdata.MinImg)
+												$("[name='MaxImg']").val(rowdata.MaxImg)
+												
+												$("[name='Name']").val(rowdata.Name)
+					
+												$("[name='EndTime']").val(rowdata.EndTime)
+					
+//												$("input[name=Enable][value=1]").attr('checked', rowdata.Enable == 1 ? true : false)
+//												$("input[name=Enable][value=0]").attr('checked', rowdata.Enable == 0 ? true : false)
+												form.render();
+					
+												layui.use('form', function() {
+					
+													form = layui.form;
+					
+													//监听提交
+													form.on('submit(formDemo)', function(data) {
+														layer.msg(JSON.stringify(data.field));
+														return false;
+					
+													});
+					
+													form.on('submit(*)', function(data) {
+					
+														//						console.log(data.field)
+					
+														$.ajax({
+															type: "post",
+															url: "http://47.97.123.93:81/api/Details/EditDetails",
+															data: {
+																Id: rowdata.Id,
+														        Money:$("[name='Money']").val(),		
+												                NowMoney:$("[name='NowMoney']").val(),
+												                zan:$("[name='zan']").val(),
+												                guanzhu:$("[name='guanzhu']").val(),
+												                PeopleNum:$("[name='PeopleNum']").val(),
+												                MinImg:$("[name='MinImg']").val(),
+												                MaxImg:$("[name='MaxImg']").val(),												
+												                Name:$("[name='Name']").val(),					
+												                EndTime:$("[name='EndTime']").val()
+					
+					
+															},
+															success: function(data) {
+					
+																if(data.ResultCode == 1) {
+																	console.log(rowdata.Enable)
+																	layer.msg("修改数据成功")
+																	setTimeout(function() {
+																		layer.closeAll()
+																	}, 1500)
+																	//当前页的刷新
+					
+																	setTimeout('window.location.reload()', 1500);
+																	//$(".layui-laypage-btn")[0].click() //方法2
+					
+																} else {
+																	layer.msg(data.message)
+																}
+					
+															}
+														});
+														return false;
+					
+													});
+												});
+					
+											}
+					
+										});
+
+					//上传图片
+					layui.use('upload', function() {
+						var upload = layui.upload;
+
+						//执行实例
+						var uploadInst = upload.render({
+							elem: '#test1', //绑定元素							
+							method: 'post',
+							accept: 'imgages',
+							url: 'http://47.97.123.93:81/api/Banner/Uploadimg', //上传接口
+							done: function(res) {
+								//上传完毕回调
+								if(res.ResultCode == 1) {
+									var src = 'http://47.97.123.93:81' + res.Src
+									$("[name='MinImg']").val(src)
+									layer.msg("上传图片成功")
+									console.log(src)
+								}
+								//							console.log(res)
+							},
+							error: function() {
+								//请求异常回调
+							}
+						});
+					});
+					layui.use('upload', function() {
+						var upload = layui.upload;
+
+						//执行实例
+						var uploadInst = upload.render({
+							elem: '#test2', //绑定元素							
+							method: 'post',
+							accept: 'imgages',
+							url: 'http://47.97.123.93:81/api/Banner/Uploadimg', //上传接口
+							done: function(res) {
+								//上传完毕回调
+								if(res.ResultCode == 1) {
+									var src = 'http://47.97.123.93:81' + res.Src
+									$("[name='MaxImg']").val(src)
+									layer.msg("上传图片成功")
+									console.log(src)
+								}
+
+							},
+							error: function() {
+								//请求异常回调
+							}
+						});
+					});
+											
+					
+
+				}
+
+			}
+		</script>
+		<script type="text/javascript">
+			//Demo
+			var form;
+			layui.use('form', function() {
+
+				form = layui.form;
+
+				//监听提交
+				form.on('submit(formDemo)', function(data) {
+					layer.msg(JSON.stringify(data.field));
+					return false;
+
+				});
+
+				layui.use('form', function() {
+
+					form.on('submit(*)', function(data) {
+
+						//											console.log(data.field)
+						console.log(data)
+						$.ajax({
+							type: "post",
+							url: "http://47.97.123.93:81/api/Details/AddDetails",
+							data: {
+								//								Id: rowdata.Id,
+								Money: data.field.Money,
+								Name: data.field.Name,
+								NowMoney: data.field.NowMoney,
+								zan: data.field.zan,
+								guanzhu: data.field.guanzhu,
+								PeopleNum: data.field.PeopleNum,
+								MinImg: data.field.MinImg,
+								MaxImg: data.field.MaxImg,
+								EndTime: data.field.EndTime
+
+							},
+							success: function(data) {
+								console.log(data)
+								if(data.ResultCode == 1) {
+
+									layer.msg(data.message)
+									setTimeout(function() {
+										layer.closeAll()
+									}, 1500)
+									//当前页的刷新
+
+									setTimeout('window.location.reload()', 1500);
+									//$(".layui-laypage-btn")[0].click() //方法2
+
+								} else {
+									layer.msg(data.message)
+								}
+
+							}
+						});
+						return false;
+					});
+
+				});
+			});
+		</script>
+
+	</body>
+
+</html>
+<!--http://47.97.123.93:81/swagger/ui/index-->

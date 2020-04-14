@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="AmazeUI-2.4.2/assets/css/amazeui.css" />
+		<script type="text/javascript" src="AmazeUI-2.4.2/assets/js/jquery.min.js"></script>
+		<script type="text/javascript" src="AmazeUI-2.4.2/assets/js/amazeui.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="AmazeUI-2.4.2/assets/css/amazeui.min.css" />
+		<link rel="stylesheet" type="text/css" href="26.css" />
+		<script type="text/javascript" src="js/template-web.js"></script>
+	</head>
+
+	<body>
+		<header class="am-topbar">
+			<h1 class="am-topbar-brand">
+                <a href="jdz.html">
+                    <img src="//storage.360buyimg.com/base/images/jdjr-logo/logo-jr-r.png?20181203"style="width: 100px;"/>
+                </a>
+            </h1>
+
+			<button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-success am-show-sm-only" data-am-collapse="{target: '#doc-topbar-collapse'}"><span class="am-sr-only">导航切换</span> <span class="am-icon-bars"></span></button>
+
+			<div class="am-collapse am-topbar-collapse" id="doc-topbar-collapse">
+				<ul class="am-nav am-nav-pills am-topbar-nav" id="doc-topbar-collapseul" style="width: 60%;">
+					<li class="am-active">
+						<a href="jd-index.html" style="cursor: pointer;">首页</a>
+					</li>
+					<li class="layui-nav-item layui-nav-itemed layui-this">
+						<a class="" href="jd后台(1).html">后台</a>
+					</li>
+					<li>
+						<a href="jdz.html">详情页</a>
+					</li>
+					<li class="am-dropdown" data-am-dropdown>
+						<a class="am-dropdown-toggle" data-am-dropdown-toggle href="javascript:;">
+							<span class="am-icon-caret-down">众筹</span>
+						</a>
+						<ul class="am-dropdown-content">
+
+							<li>
+								<a href="#">科技</a>
+							</li>
+							<li>
+								<a href="#">家电</a>
+							</li>
+							<li>
+								<a href="#">美食</a>
+							</li>
+
+							<li>
+								<a href="#">美学</a>
+							</li>
+							<li>
+								<a href="#">文化</a>
+							</li>
+
+							<li>
+								<a href="#">扶贫</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+
+				<form class="am-topbar-right am-topbar-form am-topbar-left am-form-inline" role="search">
+					<div class="am-form-group " style="margin-right: 20px;">
+						<input type="text" class="am-form-field am-input-sm" placeholder="搜索">
+						<a href="" class="am-icon-search" style="width: 2px;position: absolute;right: 160px;bottom: 12px;"></a>
+					</div>
+
+				</form>
+
+				<div class="am-topbar-right">
+					<div class="am-dropdown" data-am-dropdown="{boundary: '.am-topbar'}">
+						<!--<button class="am-btn am-btn-secondary am-topbar-btn am-btn-sm am-dropdown-toggle" data-am-dropdown-toggle>其他 <span class="am-icon-caret-down"></span></button>
+						<ul class="am-dropdown-content">
+							<li>
+								<a href="#">注册</a>
+							</li>
+							<li>
+								<a href="#">随便看看</a>
+							</li>
+						</ul>-->
+					</div>
+				</div>
+
+				<div class="am-topbar-right">
+					<button class="am-btn am-btn-primary am-topbar-btn am-btn-sm">登录</button>
+				</div>
+			</div>
+		</header>
+		<div class="tu">
+			<div class="am-slider am-slider-default">
+				<ul class="am-slides" id="banner-img">
+
+					<script type="text/html" id="banner-img1">
+						{{each list val key}}
+
+						<li>
+							<img src="{{val.Src}}">
+						</li>
+						{{/each}}
+					</script>
+				</ul>
+			</div>
+		</div>
+
+		<div class="banner-title">
+
+			<div class="am-u-md-3">
+				<h1>716674<span>万</span></h1>
+				<div class="tag" style="position: relative;left: 110px;">
+					<span>累计支持金额</span>
+				</div>
+			</div>
+
+			<div class="am-u-md-3">
+				<h1>12053<span>万</span></h1>
+				<div class="tag" style="position: relative;left: 60px;">
+					<span>单项最高筹集金额</span>
+				</div>
+			</div>
+
+			<div class="am-u-md-3">
+				<h1>37.4<span>万</span></h1>
+				<div class="tag">
+					<span>单项最高支持人数</span>
+				</div>
+			</div>
+			<div class="am-u-md-3">
+
+				<div class="input1">
+
+					<input type="text" class="am-form-field am-input-sm1 " placeholder="搜索">
+					<a href="" class="am-icon-search" style="width: 2px;position: absolute;right: 145px;bottom: 22px;"></a>
+				</div>
+
+			</div>
+
+		</div>
+
+		<div class="tu" style="margin-bottom:50px ;overflow: hidden;">
+			<div class="hot-title">
+				<h1>热门推荐<span style="cursor: pointer; margin-right: 20px;">更多></span></h1>
+			</div>
+
+			<div class="new-title" id="hot-img">
+
+				<!--<div class="am-u-md-3">
+					<div class="hot-img">
+
+						<h4 class="title-position">
+		          <i class="title-icon"></i>
+		          <b>爆品</b>
+		        </h4>
+						<img src="img/d22d691c4fbdcccb.jpg" />
+						<div class="touming"></div>
+						<p class="pro-name">和十大名茶之六安瓜片的茶缘分</p>
+						<span>已筹￥124286</span>
+					</div>
+				</div>
+				<div class="am-u-md-3">
+					<div class="hot-img">
+
+						<h4 class="title-position">
+		          <i class="title-icon"></i>
+		          <b>爆品</b>
+		        </h4>
+						<img src="img/19f45fafa7254f0c.jpg" />
+						<div class="touming"></div>
+						<p class="pro-name">户外变墨镜，超轻纯钛变色眼镜</p>
+						<span>已筹￥79202</span>
+					</div>
+				</div>
+				<div class="am-u-md-3">
+					<div class="hot-img">
+
+						<h4 class="title-position">
+		          <i class="title-icon"></i>
+		          <b>爆品</b>
+		        </h4>
+						<img src="img/b0fec44fd047e64a.jpg" />
+						<div class="touming"></div>
+						<p class="pro-name">瓦埠湖原生态螃蟹，膏肥脂满</p>
+						<span>已筹￥38014</span>
+					</div>
+				</div>
+				<div class="am-u-md-3">
+					<div class="hot-img">
+
+						<h4 class="title-position">
+		          <i class="title-icon"></i>
+		          <b>爆品</b>
+		        </h4>
+
+						<img src="img/c6c147969833c20c.jpg" />
+						<div class="touming"></div>
+						<p class="pro-name">和十大名茶之六安瓜片的茶缘分</p>
+						<span>已筹￥124286</span>
+					</div>
+				</div>-->
+			</div>
+
+		</div>
+		<div class="tu">
+			<div class="am-tabs" data-am-tabs>
+				<ul class="am-tabs-nav am-nav am-nav-tabs">
+					<li class="am-active">
+
+						<a href="javascript: void(0)">最新上架</a>
+
+					</li>
+
+					<li>
+						<a href="javascript: void(0)">即将结束</a>
+					</li>
+					<span style="padding-top: 5px;float: right;font-size: 15px;color: #a5a5a5; cursor: pointer; margin-right: 20px;">查看更多></span>
+				</ul>
+
+				<div class="am-tabs-bd zuixinsj">
+					<div class="am-tab-panel am-active">
+						<div class="am-u-md-3">
+							<div class="hot-img">
+								<div style="overflow: hidden;">
+
+									<img src="//img20.360buyimg.com/cf/jfs/t1/41041/17/15447/81490/5d82f926E740d01bf/ac5a118f04dca7e3.jpg!q80" />
+								</div>
+								<div class="xuanxiangka">
+
+									<span>WIFI儿童防水相机</span>
+									<p> 我们致力于防水、防摔、趣味的儿童相机产品的研发生产，摄录一体，让孩子创造每个妙想世界，记录童真时刻。</p>
+									<div class="am-progress" style="border-radius:20px ;height: 8px; background:#E6E6E6;">
+										<div class="am-progress-bar am-progress-bar-success" style="width: 65%;background:#3ae0ab;"></div>
+
+									</div>
+									<span class="span-title">目标</span>
+									<span class="">￥50000</span>
+									<span class="span-title" style="padding-left: 40px;">超值档位</span>
+									<span>￥299</span>
+								</div>
+							</div>
+						</div>
+						<div class="am-u-md-3">
+							<div class="hot-img">
+								<div style="overflow: hidden;">
+									<img src="//img30.360buyimg.com/cf/jfs/t1/40808/22/14081/100798/5d70de67Eafe41b03/e5247328e1f6c696.jpg!q80" />
+								</div>
+								<div class="xuanxiangka">
+
+									<span>小瓶微熏 格鲁吉亚葡萄酒</span>
+									<p>格鲁吉亚位于高加索山，有上帝遗落的后花园之称，所产葡萄酒享誉全世界，小瓶微醺装，187ml,6种口味，随心选择。 </p>
+									<div class="am-progress" style="border-radius:20px ;height: 8px; background:#E6E6E6;">
+										<div class="am-progress-bar am-progress-bar-success" style="width: 55%;background:#3ae0ab;"></div>
+
+									</div>
+									<span class="span-title">目标</span>
+									<span class="">￥50000</span>
+									<span class="span-title" style="padding-left: 40px;">超值档位</span>
+									<span>￥38</span>
+								</div>
+							</div>
+						</div>
+						<div class="am-u-md-3">
+							<div class="hot-img">
+								<div style="overflow: hidden;">
+									<img src="//img13.360buyimg.com/cf/jfs/t1/53178/11/10341/41235/5d772f39E44c6e6ec/af190d03d7e174f7.jpg!q80" />
+								</div>
+								<div class="xuanxiangka">
+
+									<span>0-6岁儿童情绪管理图画书</span>
+									<p>新西兰情绪管理作家特蕾西·莫洛尼经典之作，关注儿童心灵成长，培养孩子健全人格，帮助孩子认识自我、愉快玩耍、轻松入睡、开心上学，0-6岁适读.</p>
+									<div class="am-progress" style="border-radius:20px ;height: 8px; background:#E6E6E6;">
+										<div class="am-progress-bar am-progress-bar-success" style="width: 85%;background:darkmagenta;"></div>
+
+									</div>
+									<span class="span-title">目标</span>
+									<span class="">￥10000</span>
+									<span class="span-title" style="padding-left: 40px;">超值档位</span>
+									<span>￥88</span>
+								</div>
+							</div>
+						</div>
+						<div class="am-u-md-3">
+							<div class="hot-img">
+								<div style="overflow: hidden;">
+									<img src="//img20.360buyimg.com/cf/jfs/t1/67558/2/9954/16401/5d7739bcE2048e5a7/4eb7f126f377dc31.jpg!q80" />
+								</div>
+								<div class="xuanxiangka">
+
+									<span>睡眠新宠，品质软管枕</span>
+									<p> 抗挤、柔韧透气的PE软管，是风靡日本枕芯填充物。雅致轩精选食品级PE软管，安全无异味，环保不易滋生螨虫、细菌，陪伴入睡很安“芯”。</p>
+									<div class="am-progress" style="border-radius:20px ;height: 8px; background:#E6E6E6;">
+										<div class="am-progress-bar am-progress-bar-success" style="width: 25%;background:#3ae0ab;"></div>
+
+									</div>
+									<span class="span-title">目标</span>
+									<span class="">￥50000</span>
+									<span class="span-title" style="padding-left: 40px;">超值档位</span>
+									<span>￥98</span>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="am-tab-panel">
+						<div class="am-u-md-3">
+							<div class="hot-img">
+								<div style="overflow: hidden;">
+
+									<img src="//img20.360buyimg.com/cf/jfs/t1/41041/17/15447/81490/5d82f926E740d01bf/ac5a118f04dca7e3.jpg!q80" />
+								</div>
+								<div class="xuanxiangka">
+
+									<span>WIFI儿童防水相机</span>
+									<p> 我们致力于防水、防摔、趣味的儿童相机产品的研发生产，摄录一体，让孩子创造每个妙想世界，记录童真时刻。</p>
+									<div class="am-progress" style="border-radius:20px ;height: 8px; background:#E6E6E6;">
+										<div class="am-progress-bar am-progress-bar-success" style="width: 65%;background:#3ae0ab;"></div>
+
+									</div>
+									<span class="span-title">目标</span>
+									<span class="">￥50000</span>
+									<span class="span-title" style="padding-left: 40px;">超值档位</span>
+									<span>￥299</span>
+								</div>
+							</div>
+						</div>
+						<div class="am-u-md-3">
+							<div class="hot-img">
+								<div style="overflow: hidden;">
+									<img src="//img30.360buyimg.com/cf/jfs/t1/40808/22/14081/100798/5d70de67Eafe41b03/e5247328e1f6c696.jpg!q80" />
+								</div>
+								<div class="xuanxiangka">
+
+									<span>小瓶微熏 格鲁吉亚葡萄酒</span>
+									<p>格鲁吉亚位于高加索山，有上帝遗落的后花园之称，所产葡萄酒享誉全世界，小瓶微醺装，187ml,6种口味，随心选择。 </p>
+									<div class="am-progress" style="border-radius:20px ;height: 8px; background:#E6E6E6;">
+										<div class="am-progress-bar am-progress-bar-success" style="width: 65%;background:#3ae0ab;"></div>
+
+									</div>
+									<span class="span-title">目标</span>
+									<span class="">￥50000</span>
+									<span class="span-title" style="padding-left: 40px;">超值档位</span>
+									<span>￥38</span>
+								</div>
+							</div>
+						</div>
+						<div class="am-u-md-3">
+							<div class="hot-img">
+								<div style="overflow: hidden;">
+									<img src="//img13.360buyimg.com/cf/jfs/t1/53178/11/10341/41235/5d772f39E44c6e6ec/af190d03d7e174f7.jpg!q80" />
+								</div>
+								<div class="xuanxiangka">
+
+									<span>0-6岁儿童情绪管理图画书</span>
+									<p>新西兰情绪管理作家特蕾西·莫洛尼经典之作，关注儿童心灵成长，培养孩子健全人格，帮助孩子认识自我、愉快玩耍、轻松入睡、开心上学，0-6岁适读.</p>
+									<div class="am-progress" style="border-radius:20px ;height: 8px; background:#E6E6E6;">
+										<div class="am-progress-bar am-progress-bar-success" style="width: 65%;background:darkmagenta;"></div>
+
+									</div>
+									<span class="span-title">目标</span>
+									<span class="">￥10000</span>
+									<span class="span-title" style="padding-left: 40px;">超值档位</span>
+									<span>￥88</span>
+								</div>
+							</div>
+						</div>
+						<div class="am-u-md-3">
+							<div class="hot-img">
+								<div style="overflow: hidden;">
+									<img src="//img20.360buyimg.com/cf/jfs/t1/67558/2/9954/16401/5d7739bcE2048e5a7/4eb7f126f377dc31.jpg!q80" />
+								</div>
+								<div class="xuanxiangka">
+
+									<span>睡眠新宠，品质软管枕</span>
+									<p> 抗挤、柔韧透气的PE软管，是风靡日本枕芯填充物。雅致轩精选食品级PE软管，安全无异味，环保不易滋生螨虫、细菌，陪伴入睡很安“芯”。</p>
+									<div class="am-progress" style="border-radius:20px ;height: 8px; background:#E6E6E6;">
+										<div class="am-progress-bar am-progress-bar-success" style="width: 65%;background:#3ae0ab;"></div>
+
+									</div>
+									<span class="span-title">目标</span>
+									<span class="">￥50000</span>
+									<span class="span-title" style="padding-left: 40px;">超值档位</span>
+									<span>￥98</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="tu">
+			<div class="am-tabs" data-am-tabs>
+				<div class="t-pos fl t-hover" style="float: left;">
+					<a href="//z.jd.com/bigger/search.html?categoryId=10&amp;from=zchome" target="_blank" clstag="pageclick|keycount|zcscene_201605069|73">
+						<i class="floor">1F</i>
+						<h2 class="h2style" style="margin-top:0.7em ;">新奇酷玩</h2>
+					</a>
+
+				</div>
+				<ul class="am-tabs-nav am-nav am-nav-tabs">
+					<li style="float: right;">
+
+						<a href="javascript: void(0)">智能家居</a>
+
+					</li>
+
+					<li style="border-right: 1px solid gainsboro;border-right-width: 2px;height: 30px;float: right;">
+						<a href="javascript: void(0)">极客潮流</a>
+					</li>
+					<li class="am-active" style="float: right;">
+						<a href="javascript: void(0)">精品推荐</a>
+					</li>
+				</ul>
+				<hr style="border: 1px solid gainsboro;position: relative; left: 20px;" width="96%" />
+
+				<div class="am-tabs-bd ab">
+					<div class="am-tab-panel">
+
+						<div class="am-u-md-6">
+							<div class="hot-img">
+								<div style="overflow: hidden;">
+									<img src="img/e5a7a560d3df7697.jpg" width="595px" />
+								</div>
+								<div class="xuanxiangka">
+									<div class="pro-name name1">
+
+										<span>一盏装饰童年的台灯</span>
+										<span class="more-color">6色可选</span>
+										<a class="am-badge am-badge-secondary">数码周边</a>
+										<a class="am-badge am-badge-secondary">生活电器</a>
+									</div>
+									<div class="am-progress" style="border-radius:20px ;height: 8px; background:#E6E6E6; width: 330px; float: left; margin-top: 10px;margin-left: 5px;">
+										<div class="am-progress-bar am-progress-bar-success" style="width: 55%;background:#3ae0ab;"></div>
+
+									</div>
+									<div class="had-got-area"style="margin-right: 5px;">
+										<span>已达107%</span>
+										<i></i>
+										<span>已筹￥107222元</span>
+									</div>
+
+								</div>
+							</div>
+						</div>
+						<div class="am-u-md-3">
+							<div class="hot-img">
+								<div style="overflow: hidden;">
+									<img src="//img13.360buyimg.com/cf/jfs/t1/53178/11/10341/41235/5d772f39E44c6e6ec/af190d03d7e174f7.jpg!q80" />
+								</div>
+								<div class="xuanxiangka">
+
+									<div class="pro-name">
+										<span>很环保更省钱的5号怪兽锂电池</span>
+										<a class="am-badge am-badge-secondary">手机周边</a>
+										<a class="am-badge am-badge-secondary">数码周边</a>
+
+									</div>
+									<div class="am-progress" style="border-radius:20px ;height: 8px; background:#E6E6E6;">
+										<div class="am-progress-bar am-progress-bar-success" style="width: 85%;background:darkmagenta;"></div>
+
+									</div>
+									<div class="p-i-infos">
+
+										<div class="fore1">
+
+											<p class="num">154%</p>
+											<p class="p-num">已达</p>
+
+										</div>
+										<div class="fore2">
+											<p class="num">￥154142</p>
+											<p class="p-num">已筹</p>
+
+										</div>
+										<div class="fore3">
+											<p class="num">13天 </p>
+											<p class="p-num">剩余时间</p>
+
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="am-u-md-3">
+							<div class="hot-img">
+								<div style="overflow: hidden;">
+									<img src="//img20.360buyimg.com/cf/jfs/t1/67558/2/9954/16401/5d7739bcE2048e5a7/4eb7f126f377dc31.jpg!q80" />
+								</div>
+								<div class="xuanxiangka">
+									<div class="pro-name">
+										<span>WIFI儿童防水相机</span>
+										<br />
+										<a class="am-badge am-badge-secondary">手机周边</a>
+										<a class="am-badge am-badge-secondary">数码周边</a>
+									</div>
+									<div class="am-progress" style="border-radius:20px ;height: 8px; background:#E6E6E6;">
+										<div class="am-progress-bar am-progress-bar-success" style="width: 25%;background:#3ae0ab;"></div>
+
+									</div>
+									<div class="p-i-infos">
+										<div class="fore1">
+											<p class="num">114%</p>
+											<p class="p-num">已达</p>
+										</div>
+										<div class="fore2">
+											<p class="num">￥154142</p>
+											<p class="p-num">已筹</p>
+										</div>
+										<div class="fore3">
+											<p class="num">13天 </p>
+											<p class="p-num">剩余时间</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="am-tab-panel">
+
+						<div class="am-u-md-6">
+							<div class="hot-img">
+								<div style="overflow: hidden;">
+									<img src="img/7522268ad3ed5ccb.jpg" width="595px" />
+								</div>
+								<div class="xuanxiangka">
+									<div class="pro-name  name1">
+										<span>Type-c固态硬盘兼拓展坞</span>
+										<span class="more-color">2色可选</span>
+										<a class="am-badge am-badge-secondary">健康生活</a>
+										<a class="am-badge am-badge-secondary">时尚科技</a>
+									</div>
+									<div class="am-progress" style="border-radius:20px ;height: 8px; background:#E6E6E6; width: 330px;float: left; margin-top: 10px;margin-left: 5px;">
+										<div class="am-progress-bar am-progress-bar-success" style="width: 55%;background:#3ae0ab;"></div>
+
+									</div>
+									<div class="had-got-area" style="margin-right: 5px;">
+										<span>已达107%</span>
+										<i></i>
+										<span>已筹￥107222元</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="am-u-md-3">
+							<div class="hot-img">
+								<div style="overflow: hidden;">
+									<img src="//img13.360buyimg.com/cf/jfs/t1/53178/11/10341/41235/5d772f39E44c6e6ec/af190d03d7e174f7.jpg!q80" />
+								</div>
+								<div class="xuanxiangka">
+									<div class="pro-name">
+
+										<span>0-6岁儿童情绪管理图画书</span>
+										<a class="am-badge am-badge-secondary">数码周边</a>
+										<a class="am-badge am-badge-secondary">生活电器</a>
+									</div>
+									<div class="am-progress" style="border-radius:20px ;height: 8px; background:#E6E6E6;">
+										<div class="am-progress-bar am-progress-bar-success" style="width: 65%;background:darkmagenta;"></div>
+
+									</div>
+									<div class="p-i-infos">
+										<div class="fore1">
+											<p class="num">154%</p>
+											<p class="p-num">已达</p>
+										</div>
+										<div class="fore2">
+											<p class="num">￥154142</p>
+											<p class="p-num">已筹</p>
+										</div>
+										<div class="fore3">
+											<p class="num">13天 </p>
+											<p class="p-num">剩余时间</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="am-u-md-3">
+							<div class="hot-img">
+								<div style="overflow: hidden;">
+									<img src="//img20.360buyimg.com/cf/jfs/t1/67558/2/9954/16401/5d7739bcE2048e5a7/4eb7f126f377dc31.jpg!q80" />
+								</div>
+								<div class="xuanxiangka">
+									<div class="pro-name">
+										<span>睡眠新宠，品质软管枕</span>
+										<a class="am-badge am-badge-secondary">数码周边</a>
+										<a class="am-badge am-badge-secondary">生活电器</a>
+									</div>
+									<div class="am-progress" style="border-radius:20px ;height: 8px; background:#E6E6E6;">
+										<div class="am-progress-bar am-progress-bar-success" style="width: 65%;background:#3ae0ab;"></div>
+
+									</div>
+									<div class="p-i-infos">
+										<div class="fore1">
+											<p class="num">124%</p>
+											<p class="p-num">已达</p>
+										</div>
+										<div class="fore2">
+											<p class="num">￥154142</p>
+											<p class="p-num">已筹</p>
+										</div>
+										<div class="fore3">
+											<p class="num">13天 </p>
+											<p class="p-num">剩余时间</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="am-tab-panel  am-active">
+
+						<div class="am-u-md-6">
+							<div class="hot-img">
+								<div style="overflow: hidden;">
+									<img src="img/6598d426c436b455.jpg" width="595px" />
+								</div>
+								<div class="xuanxiangka  name1">
+
+									<div class="pro-name  name1">
+										<span>秒变一体机的迷你主机</span>
+										<span class="more-color">2色可选</span>
+										<a class="am-badge am-badge-secondary">健康生活</a>
+										<a class="am-badge am-badge-secondary">时尚科技</a>
+									</div>
+
+									<div class="am-progress" style="border-radius:20px ;height: 8px;  background:#E6E6E6;width: 330px;float: left; margin-top: 10px;margin-left: 4px;">
+										<div class="am-progress-bar am-progress-bar-success" style="width: 65%;background:#3ae0ab;"></div>
+
+									</div>
+									<div class="had-got-area" style="margin-right: 5px;">
+										<span>已达107%</span>
+										<i></i>
+										<span>已筹￥107222元</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="am-u-md-3">
+							<div class="hot-img">
+								<div style="overflow: hidden;">
+									<img src="//img13.360buyimg.com/cf/jfs/t1/53178/11/10341/41235/5d772f39E44c6e6ec/af190d03d7e174f7.jpg!q80" />
+								</div>
+								<div class="xuanxiangka">
+									<div class="pro-name">
+										<span>0-6岁儿童情绪管理图画书</span>
+										<a class="am-badge am-badge-secondary">数码周边</a>
+										<a class="am-badge am-badge-secondary">生活电器</a>
+									</div>
+									<div class="am-progress" style="border-radius:20px ;height: 8px; background:#E6E6E6;">
+										<div class="am-progress-bar am-progress-bar-success" style="width: 65%;background:darkmagenta;"></div>
+
+									</div>
+									<div class="p-i-infos">
+										<div class="fore1">
+											<p class="num">154%</p>
+											<p class="p-num">已达</p>
+										</div>
+										<div class="fore2">
+											<p class="num">￥154142</p>
+											<p class="p-num">已筹</p>
+										</div>
+										<div class="fore3">
+											<p class="num">13天 </p>
+											<p class="p-num">剩余时间</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="am-u-md-3">
+							<div class="hot-img">
+								<div style="overflow: hidden;">
+									<img src="//img20.360buyimg.com/cf/jfs/t1/67558/2/9954/16401/5d7739bcE2048e5a7/4eb7f126f377dc31.jpg!q80" />
+								</div>
+								<div class="xuanxiangka">
+									<div class="pro-name">
+										<span>睡眠新宠，品质软管枕</span>
+										<a class="am-badge am-badge-secondary">数码周边</a>
+										<a class="am-badge am-badge-secondary">生活电器</a>
+									</div>
+									<div class="am-progress" style="border-radius:20px ;height: 8px; background:#E6E6E6;">
+										<div class="am-progress-bar am-progress-bar-success" style="width: 65%;background:#3ae0ab;"></div>
+
+									</div>
+									<div class="p-i-infos">
+										<div class="fore1">
+											<p class="num">154%</p>
+											<p class="p-num">已达</p>
+
+										</div>
+										<div class="fore2">
+											<p class="num">￥154142</p>
+											<p class="p-num">已筹</p>
+										</div>
+										<div class="fore3">
+											<p class="num">13天 </p>
+											<p class="p-num">剩余时间</p>
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<div class="tu" style="margin-bottom:50px ;overflow: hidden;">
+			<div class="hot-title hot-title2">
+				<h1>众筹故事<span style="position: absolute; right:90px;cursor: pointer;" >换一组</span></h1>
+			</div>
+
+			<div class="am-tabs-bd zuixinsj">
+				<div class="am-tab-panel am-active">
+					<div class="am-u-md-3">
+						<div class="hot-img">
+							<div style="overflow: hidden;">
+
+								<img src="//img20.360buyimg.com/cf/jfs/t1/41041/17/15447/81490/5d82f926E740d01bf/ac5a118f04dca7e3.jpg!q80" />
+							</div>
+							<div class="xuanxiangka">
+
+								<span>WIFI儿童防水相机</span>
+								<p> 我们致力于防水、防摔、趣味的儿童相机产品的研发生产，摄录一体，让孩子创造每个妙想世界，记录童真时刻。</p>
+
+							</div>
+						</div>
+					</div>
+					<div class="am-u-md-3">
+						<div class="hot-img">
+							<div style="overflow: hidden;">
+								<img src="//img30.360buyimg.com/cf/jfs/t1/40808/22/14081/100798/5d70de67Eafe41b03/e5247328e1f6c696.jpg!q80" />
+							</div>
+							<div class="xuanxiangka">
+
+								<span>小瓶微熏 格鲁吉亚葡萄酒</span>
+								<p>格鲁吉亚位于高加索山，有上帝遗落的后花园之称，所产葡萄酒享誉全世界，小瓶微醺装，187ml,6种口味，随心选择。 </p>
+
+							</div>
+						</div>
+					</div>
+					<div class="am-u-md-3">
+						<div class="hot-img">
+							<div style="overflow: hidden;">
+								<img src="//img13.360buyimg.com/cf/jfs/t1/53178/11/10341/41235/5d772f39E44c6e6ec/af190d03d7e174f7.jpg!q80" />
+							</div>
+							<div class="xuanxiangka">
+
+								<span>0-6岁儿童情绪管理图画书</span>
+								<p>新西兰情绪管理作家特蕾西·莫洛尼经典之作，关注儿童心灵成长，培养孩子健全人格，帮助孩子认识自我、愉快玩耍、轻松入睡、开心上学，0-6岁适读.</p>
+
+							</div>
+						</div>
+					</div>
+					<div class="am-u-md-3">
+						<div class="hot-img">
+							<div style="overflow: hidden;">
+								<img src="//img20.360buyimg.com/cf/jfs/t1/67558/2/9954/16401/5d7739bcE2048e5a7/4eb7f126f377dc31.jpg!q80" />
+							</div>
+							<div class="xuanxiangka">
+
+								<span>睡眠新宠，品质软管枕</span>
+								<p> 抗挤、柔韧透气的PE软管，是风靡日本枕芯填充物。雅致轩精选食品级PE软管，安全无异味，环保不易滋生螨虫、细菌，陪伴入睡很安“芯”。</p>
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+
+		<div class="tu" style="margin-bottom:40px;">
+
+			<div class="am-tabs-bd zcgh">
+				<div class="am-tab-panel am-active">
+					<div class="am-u-md-6">
+						<div class="hot-img">
+							<div style="overflow: hidden; float: left;">
+
+								<img src="//img30.360buyimg.com/sq/jfs/t26059/255/903630480/21441/c461c3b/5b7f787cNa431e0ab.jpg " width="280px" height="140px" class="gaiimg" />
+							</div>
+							<div class="znews-ul fr">
+								<div class="znews-t">
+									<span class="fl"><a href="//zbbs.jd.com/portal.php?mod=list&amp;catid=8" target="_blank" clstag="pageclick|keycount|sceneIndex_201602246|87" class="f1a">众筹干货</a></span>
+									<i></i>
+									<span class="fr"><a href="//zbbs.jd.com/portal.php?mod=list&amp;catid=8" target="_blank" class="fra">更多&gt;</a></span>
+								</div>
+								<ul id="channel_9">
+									<li onmouseover="changeImg(this,'//img30.360buyimg.com/sq/jfs/t26059/255/903630480/21441/c461c3b/5b7f787cNa431e0ab.jpg',1)">
+										<a href="http://baidu.com">智能音箱的一代宗师：网易三音云音箱</a>
+									</li>
+									<li onmouseover="changeImg(this,'//img30.360buyimg.com/sq/jfs/t22807/296/2424150130/19674/5d29fb7c/5b7f780eN9d4beb7c.jpg',1)">
+										<a href="http://baidu.com"> “岩”智能3d打印机，实现你所有疯狂想法 </a>
+
+									</li>
+
+									<li onmouseover="changeImg(this,'//img30.360buyimg.com/sq/jfs/t25852/217/883810966/28151/5725f42b/5b7f756aN643562d4.jpg',1)">
+										<a href="http://baidu.com">设计师专享福利：多彩Designer键盘</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="am-u-md-6">
+						<div class="hot-img">
+							<div style="overflow: hidden;float: left;">
+								<img src="////img30.360buyimg.com/sq/jfs/t20605/337/2498556331/25192/fbd47d9f/5b5aef65N2efcc13b.jpg " width="280px" height="140px" class="gaiimg2" />
+							</div>
+							<div class="znews-ul fr">
+								<div class="znews-t">
+									<span class="fl"><a href="//zbbs.jd.com/portal.php?mod=list&amp;catid=8" target="_blank" clstag="pageclick|keycount|sceneIndex_201602246|87" class="f1a">众筹资讯</a></span>
+									<i></i>
+									<span class="fr"><a href="//zbbs.jd.com/portal.php?mod=list&amp;catid=8" target="_blank"  class="fra">更多&gt; </a></span>
+								</div>
+								<ul id="channel_9">
+									<li onmouseover="changeImg(this,'//img30.360buyimg.com/sq/jfs/t20605/337/2498556331/25192/fbd47d9f/5b5aef65N2efcc13b.jpg',2)">
+										<a href="http://baidu.com">华为将赶超三星首发可折叠手机</a>
+									</li>
+									<li onmouseover="changeImg(this,'//img30.360buyimg.com/sq/jfs/t21991/347/2636542396/17510/1b8ac842/5b5ebc3bN10487afe.jpg',2)">
+										<a href="http://baidu.com">5-10年中国智能门锁需求量将超3000万套 企业涌入</a>
+									</li>
+
+									<li onmouseover="changeImg(this,'//img30.360buyimg.com/sq/jfs/t23437/162/1416335089/11751/148bef02/5b5eb9d1N7ca23823.jpg',2)">
+										<a href="http://baidu.com">兼具智慧和颜值！这些智能家居 你pick哪一件？</a>
+									</li>
+
+								</ul>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+		<div class="star-zc-area">
+			<a href="//z-dm.jd.com/funding/goCreate.html">
+				<div class="star-zc-box w">
+					<span class="star-text">立刻发起众筹梦想，将你的独特创意分享给更多的人</span>
+					<span class="star-btn" clstag="pageclick|keycount|sceneIndex_201602281|99"><em>+</em>发起众筹</span>
+				</div>
+			</a>
+		</div>
+		<!--分类浏览 可以用meiziui的等分网格6等分做 -->
+		<div class="b-inner">
+			<div class="b-i-tit clearfix">
+				<h3 class="bi-tit fl">分类浏览</h3>
+				<a target="_blank" href="/bigger/search.html" class="bi-link fr">所有项目 &gt;</a>
+			</div>
+			<br />
+			<br />
+			<ul class="b-i-cont mt20" id="categorylist">
+
+				<li>
+					<a target="_blank" href="/bigger/search.html?categoryId=15">健康监测</a>
+				</li>
+				<li>
+					<a target="_blank" href="/bigger/search.html?categoryId=16">智能穿戴</a>
+				</li>
+				<li>
+					<a target="_blank" href="/bigger/search.html?categoryId=17">家居安全</a>
+				</li>
+				<li>
+					<a target="_blank" href="/bigger/search.html?categoryId=31">时尚科技</a>
+				</li>
+				<li>
+					<a target="_blank" href="/bigger/search.html?categoryId=19">互联网汽车</a>
+				</li>
+				<li>
+					<a target="_blank" href="/bigger/search.html?categoryId=20">手机</a>
+				</li>
+				<li>
+					<a target="_blank" href="/bigger/search.html?categoryId=21">数码</a>
+				</li>
+				<li>
+					<a target="_blank" href="/bigger/search.html?categoryId=30">生活健康</a>
+				</li>
+				<li>
+					<a target="_blank" href="/bigger/search.html?categoryId=18">智能家电</a>
+				</li>
+				<li>
+					<a target="_blank" href="/bigger/search.html?categoryId=29">良品家居</a>
+				</li>
+				<li>
+					<a target="_blank" href="/bigger/search.html?categoryId=32">设计师</a>
+				</li>
+				<li>
+					<a target="_blank" href="/bigger/search.html?categoryId=23">音乐</a>
+				</li>
+				<li>
+					<a target="_blank" href="/bigger/search.html?categoryId=24">影视</a>
+				</li>
+				<li>
+					<a target="_blank" href="/bigger/search.html?categoryId=25">游戏</a>
+				</li>
+				<li>
+					<a target="_blank" href="/bigger/search.html?categoryId=26">动漫</a>
+				</li>
+				<li>
+					<a target="_blank" href="/bigger/search.html?categoryId=27">体育</a>
+				</li>
+				<li>
+					<a target="_blank" href="/bigger/search.html?categoryId=28">旅游</a>
+				</li>
+				<li>
+					<a target="_blank" href="/bigger/search.html?categoryId=22">文化</a>
+				</li>
+				<li>
+					<a target="_blank" href="/bigger/search.html?categoryId=34">公益</a>
+				</li>
+				<li>
+					<a target="_blank" href="/bigger/search.html?categoryId=39">非遗文化</a>
+				</li>
+				<li>
+					<a target="_blank" href="/bigger/search.html?categoryId=35">其他</a>
+				</li>
+				<li>
+					<a target="_blank" href="/bigger/search.html?categoryId=33">母婴</a>
+				</li>
+			</ul>
+		</div>
+
+		<div class="f-copyright" style="position: relative; top: 0px;">
+			<div class="grid-1200 footerHolder">
+				<div class="footer-nav">
+					<p>
+						<a href="//jrhelp.jd.com/show/getProblemInfo?id=688" target="_blank" clstag="jr|keycount|jr_shouye|footer1">关于京东金融</a><span class="footer-nav-cut">|</span>
+						<a href="//jrhelp.jd.com/show/getProblemInfo?id=169" target="_blank" clstag="jr|keycount|jr_shouye|footer2">关于京东小金库</a><span class="footer-nav-cut">|</span>
+						<a href="//jrhelp.jd.com/show/getProblemInfo?id=244" target="_blank">关于京东白条</a><span class="footer-nav-cut">|</span>
+						<a href="https://www.jddglobal.com/" target="_blank">京东数科</a><span class="footer-nav-cut">|</span>
+						<a href="//jrhelp.jd.com/show/getProblemInfo-3061" target="_blank" clstag="jr|keycount|jr_shouye|zhishichanquan">知识产权</a><span class="footer-nav-cut">|</span>
+						<a href="//jrhelp.jd.com/show/getProblemInfo-1677" target="_blank" rel="nofollow" clstag="jr|keycount|jr_shouye|footer5">免责声明</a><span class="footer-nav-cut">|</span>
+						<a href="//union.jr.jd.com/" target="_blank" clstag="jr|keycount|jr_shouye|footer7">金融联盟</a><span class="footer-nav-cut">|</span>
+						<a href="//jrhelp.jd.com/show/getProblemInfo-2749" target="_blank" rel="nofollow" clstag="jr|keycount|jr_shouye|footer8">平台协议</a><span class="footer-nav-cut">|</span>
+						<a href="//jrhelp.jd.com/show/getProblemInfo-2748" target="_blank" rel="nofollow" clstag="jr|keycount|jr_shouye|footer9">隐私政策</a><span class="footer-nav-cut">|</span>
+						<a class="item-kefu" href="https://jtalk.jd.com?entrance=10000&amp;source=web&amp;companyId=1" target="_blank" clstag="jr|keycount|jr_shouye|footer4">联系客服</a><span class="footer-nav-cut">|</span>
+						<a href="https://img30.360buyimg.com/jr_image/jfs/t26398/228/2024551290/150862/7048fb83/5bf51d0fN46d70792.jpg" target="_blank">营业执照</a>
+					</p>
+					<p>Copyright © 2004-2018 京东JD.com 版权所有<span class="footer-nav-cut">|</span>投资有风险，购买需谨慎</p>
+				</div>
+			</div>
+		</div>
+
+	</body>
+	<script type="text/javascript">
+		//		var list = [{
+		//					"start_date": "20191013",
+		//					"end_date": "20191014",
+		//					"url": "https://www.bing.com/th?id=OHR.AlbertaThanksgiving_ZH-CN5899007960_1920x1080.jpg",
+		//					"copyright": "阿尔伯塔的日出，加拿大 (? Ambre Haller/Moment/Getty Images)",
+		//					"copyright_link": "https://www.bing.com/search?q=%E9%98%BF%E5%B0%94%E4%BC%AF%E5%A1%94%E7%9A%84%E6%97%A5%E5%87%BA\u0026form=hpcapt\u0026mkt=zh-cn"
+		//				}, {
+		//					"start_date": "20191006",
+		//					"end_date": "20191007",
+		//					"url": "https://www.bing.com/th?id=OHR.GreaterFlamingo_ZH-CN2596334768_1920x1080.jpg",
+		//					"copyright": "韦尔瓦奥迪尔湿地起飞的三只大红鹳，西班牙安达卢西亚 (? óscar Díez/Minden Pictures)",
+		//					"copyright_link": "https://www.bing.com/search?q=%E5%A4%A7%E7%BA%A2%E9%B9%B3\u0026form=hpcapt\u0026mkt=zh-cn"
+		//				}]
+		//				for(i = 0; i < list.length; i++) {
+		//					var html = '<li><img src=' + list[i].url + '></li>'
+		//
+		//					$('#banner-img').append(html)
+		//					//		console.log(list[i].url)
+		//				}
+
+		function changeImg(obj, img, index) {
+			if(index == 1) {
+				var href = $(obj).find('a').attr('href')
+				//			console.log(href)
+				//			console.log($(obj).children())
+				$('.gaiimg').attr('src', img)
+			} else if(index == 2) {
+
+				var href = $(obj).find('a').attr('href')
+
+				$('.gaiimg2').attr('src', img)
+			}
+
+		}
+		$.ajax({
+			type: "get",
+			url: "https://api.isoyu.com/api/Zhihu/zhihu_daily",
+			success: function(data) {
+				for(var i = 0; i < 4; i++) {
+					var html = `<div class="am-u-md-3">
+					<div class="hot-img">
+						<h4 class="title-position">
+		          <i class="title-icon"></i>
+		          <b>爆品</b>
+		        </h4>
+						<img src="${data.data.top_stories[i].image}"/>
+						<div class="touming"></div>
+						<p class="pro-name">${data.data.top_stories[i].title}</p>
+
+					</div>
+				</div>`
+					$('#hot-img').append(html)
+					//				console.log(data)
+				}
+
+			}
+		});
+	</script>
+
+	<script type="text/javascript">
+		$.ajax({
+			type: "get",
+			url: "http://47.97.123.93:81/api/banner/getbanners",
+			success: function(data) {
+
+				var a = [];
+
+				for(i = 0; i < data.data.length; i++) {
+
+					if(data.data[i].Src == null || data.data[i].Enable == false) {
+
+					} else if(a.length < 4) {
+						a.push(data.data[i])
+					} else if(a.length = 4) {
+						break
+					}
+				}
+
+				var html = template('banner-img1', {
+
+					list: a
+
+				})
+				var container = document.querySelector('#banner-img');
+				container.innerHTML = html;
+
+				$(function() {
+
+						$('.am-slider ').flexslider({
+							// options
+						});
+					}
+
+				)
+			}
+		});
+	</script>
+	<script type="text/javascript">
+		$.ajax({
+			type: "get",
+			url: "http://47.97.123.93:81/api/Category/GetCategorys?keyword=",
+			success: function(data) {
+				//				console.log(data.data[0].DisplayName)
+				//				console.log(data.data.length)
+
+				for(i = 0; i < 10; i++) {
+					var b = `<li><a href="#">${data.data[i].DisplayName}</a></li>`
+					var a = data.data[i].DisplayName
+					console.log(b)
+
+					$('#doc-topbar-collapseul').append(b)
+					//					return `<a href="#">data.data[i].DisplayName</a>`
+				}
+
+			}
+		});
+	</script>
+
+</html>

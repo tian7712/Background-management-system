@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="AmazeUI-2.4.2/assets/css/amazeui.css" />
+		<script type="text/javascript" src="AmazeUI-2.4.2/assets/js/jquery.min.js"></script>
+		<script type="text/javascript" src="AmazeUI-2.4.2/assets/js/amazeui.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="AmazeUI-2.4.2/assets/css/amazeui.min.css" />
+		<link rel="stylesheet" type="text/css" href="font-awesome-4.7.0/css/font-awesome.min.css" />
+		<link rel="stylesheet" type="text/css" href="26.css" />
+		<style type="text/css">
+			* {
+				font-family: "微软雅黑";
+			}
+			
+			.bj {
+				width: 1200px;
+				margin: 0 auto;
+			}
+			
+			.xm {
+				width: 1200px;
+				height: 500px;
+				border: 1px solid #F2F2F2;
+				box-shadow: 0 0 40px rgba(216, 216, 216, .8);
+				overflow: hidden;
+				position: relative;
+			}
+			/*.yc {}*/
+			
+			.xm-span {
+				color: #FFFF;
+				position: absolute;
+				top: 2px;
+				left: 40px;
+				z-index: 3;
+				display: block;
+				width: 90px;
+				height: 30px;
+				line-height: 30px;
+				text-align: center;
+				color: rgb(255, 255, 255);
+				font-size: 20px;
+				font-weight: 400;
+				font-family: "微软雅黑";
+			}
+			
+			.title-position {
+				position: absolute;
+				top: 15px;
+				left: -44px;
+				width: 200px;
+				height: 40px;
+				z-index: 1;
+				text-align: center;
+				transform: rotate(-45deg);
+				overflow: hidden;
+			}
+			
+			.bj .title-icon {
+				/*background-color: slateblue;*/
+				width: 200px;
+				height: 40px;
+				position: absolute;
+				top: 0;
+				left: 0;
+				z-index: 2;
+				display: block;
+				background: -webkit-linear-gradient(left, #3ae0ab, #19dce4);
+			}
+			
+			.xm-img {
+				float: left;
+				margin: 20px;
+			}
+			
+			.xm-img img {
+				width: 750px;
+				height: 450px;
+			}
+			
+			.xm-right {
+				margin: 20px;
+			}
+			
+			.xm-right .p-title {
+				font-family: 'Microsoft Yahei', Arial;
+				font-size: 25px;
+				font-weight: 100;
+			}
+			
+			.xm-right .p-num {
+				font-family: Arial;
+				font-size: 48px;
+				margin: 0;
+			}
+			
+			.xm-right .p-num span {
+				font-size: 22px;
+			}
+			
+			.xm-right .am-progress .am-progress-bar {
+				border-radius: 20px;
+				width: 10px;
+				height: 10px;
+				background: -webkit-linear-gradient(left, #CC0066, #FF66FF);
+			}
+			
+			.xm-right .am-progress {
+				border-radius: 20px;
+				/*width: 345px;*/
+				height: 10px;
+				
+			}
+			
+			.xm-right .p-jd {
+				margin: -15px 1px 0 0;
+			}
+			
+			.xm-right .p-jd .fr1 {
+				float: right;
+				color: #323232;
+				font-size: 14px;
+				font-weight: bold;
+			}
+			/*1*/
+			
+			.xm-right .p-wz {
+				margin-top: 5px;
+				color: #5e5e5e;
+				font-size: 14px;
+				padding: 0px 5px;
+			}
+			
+			.xm-right .p-wz span {
+				color: #ff6262;
+				font-family: Arial;
+			}
+			
+			.xm-right .button1 {
+				background-color: #3AE0AB;
+				border: none;
+				width: 165px;
+				margin-right: 7px;
+				border-radius: 4px;
+			}
+			
+			.xm-right .button2 {
+				background-color: orange;
+				border: none;
+				width: 165px;
+				margin-top: -4px;
+				border-radius: 4px;
+			}
+			/*.xm-right .button2:focus i{
+				color: #fff;
+				background: #fff;
+				
+			} */
+			
+			.xm-right .am-btn span {
+				font-size: 12px;
+			}
+			
+			.xm-right .xm-fx button {
+				border: none;
+				margin-right: 2px;
+				width: 30px;
+				height: 30px;
+				border-radius: 5px;
+			}
+			/*项目主页*/
+			
+			.xmzy {
+				/*width: 800px;*/
+				margin-top: 20px;
+				padding-top: 20px;
+				border: 1px solid #F2F2F2;
+				box-shadow: 0 0 40px rgba(216, 216, 216, .8);
+				/*	float: left;*/
+			}
+			
+			.xmzy img {
+				width: 650px;
+				height: 700px;
+			}
+			
+			.xmzy-right {
+				margin-top: 20px;
+				padding-left: 30px;
+				/*	width: 350px;*/
+				/*float: right;*/
+			}
+			
+			.xmzy-right .iphone {
+				background: url(img/lead-ewm-bg.png) no-repeat;
+				width: 370px;
+				height: 210px;
+			}
+			
+			.xmzy-right .iphone p {
+				margin: 65px 25px 0 0;
+				text-align: right;
+				font-weight: bold;
+				font-size: 18px;
+				color: #d6ba87;
+			}
+			
+			.xmzy-right .iphone p span {
+				font-weight: normal;
+				font-size: 14px;
+				color: #fff;
+			}
+			
+			.xmzy-right .iphone img {
+				margin: 46px auto 0 40px;
+				width: 100px;
+				height: 100px;
+			}
+			
+			.xmzy-right .xmzy-fq {
+				width: 370px;
+				height: 250px;
+				padding: 20px;
+				border: 1px solid #F2F2F2;
+				box-shadow: 0 0 40px rgba(216, 216, 216, .8);
+			}
+			
+			.xmzy-right .xmzy-fq img {
+				border-radius: 50%;
+				width: 70px;
+				height: 70px;
+				float: left;
+				margin-left: 10px;
+			}
+			
+			.xmzy-right .xmzy-fq span {
+				margin-right: 20px;
+			}
+			
+			.xmzy-right .xmzy-fq .img-r p span {
+				font-weight: bold;
+			}
+			
+			.sm {
+				width: 66px;
+				height: 28px;
+				background-image: url(img/bgs-s3b590d2981.png);
+				background-repeat: no-repeat;
+				display: none;
+			}
+			
+			.sm1 {
+				position: absolute;
+				left: -26px;
+				top: -35px;
+				background-position: 0 -1060px;
+			}
+			
+			.sm2 {
+				position: absolute;
+				left: -26px;
+				top: -35px;
+				background-position: 0 -112px;
+			}
+			
+			.sm-i {
+				width: 10px;
+				height: 10px;
+			}
+			
+			.icon-v {
+				background-image: url(img/bgs-s3b590d2981.png);
+				background-position: 0 -1088px;
+				width: 14px;
+				height: 16px;
+			}
+			
+			.icon-h {
+				width: 18px;
+				height: 15px;
+				background-image: url(img/bgs-s3b590d2981.png);
+				background-position: 0 -140px;
+			}
+			
+			.fa {
+				margin-right: 5px;
+			}
+			
+			.fa:hover .sm {
+				display: block;
+			}
+			
+			.xmzy-right .xmzy-fq button {
+				padding: 0;
+				width: 96px;
+				height: 30px;
+				margin-right: 6px;
+				color: #5e5e5e;
+				font-size: 14px;
+				background: #f9f9f9;
+				border: 1px solid #a5a5a5;
+				border-radius: 2px;
+			}
+			
+			.xmzy-right .xmzy-mj {
+				width: 370px;
+				height: 170px;
+				margin-top: 20px;
+				padding: 20px;
+				border: 1px solid #F2F2F2;
+				box-shadow: 0 0 40px rgba(216, 216, 216, .8);
+			}
+			
+			.xmzy-mj .mj-bj {
+				background: url(img/coupon-bg01.png) no-repeat;
+				width: 285px;
+				height: 150px;
+				margin: 0 auto;
+				color: #fff;
+				padding: 15px;
+			}
+			
+			.xmzy-mj .mj-bj span:nth-child(1) {
+				font-weight: 700;
+				font-family: Arial;
+				font-size: 36px;
+				line-height: 36px;
+			}
+			
+			.xmzy-mj .mj-bj span:nth-child(1) b {
+				font-size: 18px;
+				font-weight: 700;
+				font-family: "Microsoft Yahei";
+				margin-left: 3px;
+			}
+			
+			.xmzy-mj .mj-bj span:nth-child(2) {
+				margin-left: 10px;
+				font-size: 14px;
+				white-space: nowrap;
+			}
+			
+			.xmzy-mj .mj-bj h5 {
+				font-size: 12px;
+				padding: 0;
+				margin: 0;
+				margin-bottom: 5px;
+				max-width: 200px;
+			}
+			
+			.xmzy-mj .mj-bj .bj-left p {
+				font-size: 12px;
+				padding: 0;
+				margin: 0;
+				max-width: 200px;
+				color: beige;
+			}
+			
+			.xmzy-mj .mj-bj .bj-right p {
+				width: 20px;
+				float: right;
+				line-height: 24px;
+				cursor: pointer;
+			}
+			
+			.xmzy .xmzy-xm h2 span {
+				margin-right: 30px;
+				padding: 4px;
+				cursor: pointer;
+			}
+			
+			.xmzy .xmzy-xm h2 span:hover {
+				color: #3AE0AB;
+				border-bottom: 4px solid #3AE0AB;
+			}
+			
+			.xmzy-right .xmzy-zc {
+				width: 370px;
+				height: 350px;
+				padding: 20px;
+				border: 1px solid #F2F2F2;
+				box-shadow: 0 0 40px rgba(216, 216, 216, .8);
+				font-size: 14px;
+				margin-top: 20px;
+			}
+			
+			.xmzy-right .xmzy-zc p {
+				margin: 3px;
+			}
+			
+			.xmzy-right .xmzy-zc span {
+				font-weight: bold;
+			}
+			
+			.xmzy-right .xmzy-zc button {
+				width: 150px;
+				background: #2fd6a2;
+				border: none;
+				color: rgb(255, 255, 255);
+				font-size: 18px;
+				border-radius: 5px;
+				margin-top: 5px;
+			}
+			
+			.am-nav-tabs.am-nav-justify>.am-active>a,
+			.am-nav-tabs.am-nav-justify>.am-active>a:hover,
+			.am-nav-tabs.am-nav-justify>.am-active>a:focus {
+				border: none;
+				color: #2fd6a2;
+				font-weight: 700;
+				border-bottom: 4px #2fd6a2 solid;
+			}
+			
+			.am-nav-tabs li :focus .xm-bubble {
+				background: #2fd6a2;
+			}
+			
+			.am-nav-justify {
+				width: 450px;
+				font-size: 18px;
+			}
+			
+			.am-nav-tabs li a {
+				border: none;
+				color: #000000;
+			}
+			
+			.am-nav-tabs li .xm-bubble {
+				height: 14px;
+				line-height: 14px;
+				background: #000;
+				border-radius: 7px;
+				color: #fff;
+				font-size: 12px;
+				padding: 0 8px;
+				margin-left: 5px;
+			}
+			
+			.am-nav-tabs.am-nav-justify>li>a {
+				border: #fff;
+			}
+			
+			.am-tab-panel .xmzy-xm .szg {
+				border-left: 1px solid gainsboro;
+				margin: 0 2% 0 13%;
+				padding-left: 20px;
+				color: #5e5e5e;
+				font-size: 14px;
+			}
+			
+			.am-tab-panel .xmzy-xm .szg-sj {
+				float: left;
+				font-size: 14px;
+				color: #a5a5a5;
+			}
+			
+			.szg span {
+				margin: 25px 0px;
+			}
+			
+			.szg-botton {
+				background: #fff;
+				border: 1px solid gainsboro;
+				padding: 5px 15px;
+			}
+			
+			.szg-yd {
+				background-image: url(img/bgs-s3b590d2981.png);
+				background-position: 0 -678px;
+				width: 12px;
+				height: 12px;
+				display: block;
+				float: right;
+				margin: 5px auto auto 5px;
+			}
+			
+			.szg-img {
+				margin: auto 30%;
+				margin-top: 20px;
+			}
+			
+			.sm-span {
+				width: 10px;
+				height: 10px;
+			}
+			/*头部*/
+			
+			.am-icon-search:before {
+				position: relative;
+				left: 95px;
+			}
+			
+		</style>
+	</head>
+
+	<body>
+		<header class="am-topbar">
+			<h1 class="am-topbar-brand">
+				<a href="jd-index.html">
+                    <img src="//storage.360buyimg.com/base/images/jdjr-logo/logo-jr-r.png?20181203"style="width: 100px;"/>
+                </a>
+			</h1>
+
+			<button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-success am-show-sm-only" data-am-collapse="{target: '#doc-topbar-collapse'}"><span class="am-sr-only">导航切换</span> <span class="am-icon-bars"></span></button>
+
+			<div class="am-collapse am-topbar-collapse" id="doc-topbar-collapse">
+				<ul class="am-nav am-nav-pills am-topbar-nav" id="doc-topbar-collapseul">
+					<li class="am-active">
+						<a href="jd-index.html" style="cursor: pointer;">首页</a>
+					</li>
+					<!--<li>
+						<a href="#">科技</a>
+					</li>-->
+					<!--<li class="am-dropdown" data-am-dropdown>
+						<a class="am-dropdown-toggle" data-am-dropdown-toggle href="javascript:;">
+							<span class="am-icon-caret-down">众筹</span>
+						</a>
+						<ul class="am-dropdown-content">
+
+							<li>
+								<a href="#">科技</a>
+							</li>
+							<li>
+								<a href="#">家电</a>
+							</li>
+							<li>
+								<a href="#">美食</a>
+							</li>
+
+							<li>
+								<a href="#">美学</a>
+							</li>
+							<li>
+								<a href="#">文化</a>
+							</li>
+
+							<li>
+								<a href="#">扶贫</a>
+							</li>
+						</ul>
+					</li>-->
+				</ul>
+
+				<form class="am-topbar-right am-topbar-form am-topbar-left am-form-inline" role="search">
+					<div class="am-form-group " style="margin-right: 20px;">
+						<input type="text" class="am-form-field am-input-sm" placeholder="搜索">
+						<a href="" class="am-icon-search" style="width: 2px;position: absolute;right: 160px;bottom: 12px;"></a>
+					</div>
+
+				</form>
+
+				<div class="am-topbar-right">
+					<div class="am-dropdown" data-am-dropdown="{boundary: '.am-topbar'}">
+
+					</div>
+				</div>
+
+				<div class="am-topbar-right">
+					<button class="am-btn am-btn-primary am-topbar-btn am-btn-sm">登录</button>
+				</div>
+			</div>
+		</header>
+
+		<!--//1-->
+		<div class="bj">
+
+			<div class="xm">
+				<div class="xm-yc" id="xm-yc">
+					<h4 class="title-position">
+		           	<i class="title-icon"></i>
+		          	<span class="xm-span">众筹中</span>
+		          </h4>
+				</div>
+				<!--<div class="xm-img">
+					<img src="//img30.360buyimg.com/cf/jfs/t1/46977/25/9912/43539/5d70ef99Efccdf3dc/9a94cfc60cf71874.jpg" alt="">
+				</div>-->
+				<div class="xm-right" id="xm-right">
+					<!--<h1 class="p-title">ICAT6 GPS无刷无人机</h1>-->
+					<!--<p class="p-cd" style="margin: 0;">已筹到</p>-->
+					<!--<p class="p-num"><span>￥</span>92446</p>-->
+					<!--<div class="am-progress">
+						<div class="am-progress-bar am-progress-bar-fuchsia" style="width: 91%"></div>
+					</div>-->
+					<!--<p class="p-jd">
+						<span class="f2" style="color: rgb(161, 6, 224); font-size: 15px;font-weight:bold ;">当前进度91%</span><span class="fr1">897名支持者</span>
+					</p>-->
+					<!--<p class="p-wz">此项目必须在
+						<span class="f_red">2019年10月17日</span>前得到
+						<span class="f_red"><i style="font-style: normal">￥</i>10000</span> 的支持才可成功！ 剩余
+						<span class="f_red"> 18</span> 天!
+					</p>-->
+					<!--<button type="button" class="am-btn am-btn-primary button1"><i class="fa fa-heart-o" aria-hidden="true"></i> 关注<span> (192)</span></button>
+					<button type="button" class="am-btn am-btn-primary button2"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 赞<span> (9)</span></button>-->
+					<!--<p style="color: #a5a5a5;font-size: 14px;margin: 25px 0 10px;">分享到</p>-->
+					<!--<div class="xm-fx">
+
+						<button><i class="fa fa-weibo" aria-hidden="true"></i></button>
+						<button><i class="fa fa-tencent-weibo" aria-hidden="true"></i></button>
+						<button><i class="fa fa-star" aria-hidden="true"></i></button>
+						<button><i class="fa fa-eercast" aria-hidden="true"></i></button>
+						<button><i class="fa fa-users" aria-hidden="true"></i></button>
+						<button><i class="fa fa-weixin" aria-hidden="true"></i></button>
+					</div>-->
+				</div>
+			</div>
+
+			<!--项目主页-->
+			<div class="am-g" style="width: 1200px;">
+
+				<div class="xmzy am-u-md-8">
+					<div class="am-tabs" id="doc-my-tabs">
+						<ul class="am-tabs-nav am-nav am-nav-tabs am-nav-justify">
+							<li class="am-active">
+								<a href="">项目主页</a>
+							</li>
+							<li>
+								<a href="">进展<span class="xm-bubble">2</span></a>
+
+							</li>
+							<li>
+								<a href="">话题<span class="xm-bubble">69</span></a>
+							</li>
+						</ul>
+						<hr style="margin: 0px;color: gray;height: 2px;" />
+						<div class="am-tabs-bd">
+							<div class="am-tab-panel am-active">
+								<div class="xmzy-xm" style="margin:0  10%;">
+
+									<video width="600px" height="450px" tabindex="-1" preload="auto" src="https://vod.300hu.com/4c1f7a6atransbjngwcloud1oss/6cda9542226441754583764993/v.f30.mp4" controls=""></video>
+									<h2 style="font-size: 20px;font-weight: bold;padding: 15px 0;font-size: 18px;">众筹故事</h2>
+									<img class="lazyout-detail" src="//img30.360buyimg.com/cf/jfs/t1/59607/25/10570/123844/5d81d261E65e4f4db/f13c6ae85adb3144.jpg" data-original="//img30.360buyimg.com/cf/jfs/t1/66615/9/9409/432810/5d70cdcbE47ea9f49/98ad584116a816f3.jpg" alt="" style="display: inline;height: 900px;">
+									<img class="lazyout-detail" src="//img30.360buyimg.com/cf/jfs/t1/54274/27/9994/113939/5d725cd4E9dd9378e/ce8b5c931bb3e950.jpg" data-original="//img30.360buyimg.com/cf/jfs/t1/60963/37/9112/376382/5d70cdd1E2a714f90/7bb6b8ef836cc410.jpg" alt="" style="display: inline;height: 900px;">
+									<img class="lazyout-detail" src="//img30.360buyimg.com/cf/jfs/t1/80597/40/10673/498259/5d81d19fE8be00ba0/4468c8c9c66a6acd.gif" data-original="//img30.360buyimg.com/cf/jfs/t1/54248/18/9798/320580/5d70cdddEb62086b8/82c924d79dbe928a.jpg" alt="" style="display: inline;height: 300px;">
+									<img class="lazyout-detail" src="//img30.360buyimg.com/cf/jfs/t1/41841/21/14253/506739/5d725cd8E93d04c2f/6840e3eed7fcb098.jpg" data-original="//img30.360buyimg.com/cf/jfs/t1/64864/23/9301/419895/5d70cdd7E9217956f/fadcfe13b35bf769.jpg" alt="" style="display: inline;height: 900px;">
+								</div>
+							</div>
+							<div class="am-tab-panel">
+								<div class="xmzy-xm" style="margin:0  2%;">
+									<p style="color: #a5a5a5;text-align: center;font-size:14px ; margin-top: 10px;">这里记录了项目发起人更新的项目进展，您可以提问了解更多项目相关细节。</p>
+									<img src="//storage.360buyimg.com/i.imageUpload/6a645f3533663562313832666535663031353133383235323834353437_mid.jpg" style="width: 60px;height: 60px;" />
+									<span>时之光，取时光永恒之意，是一家致力于科技与传统工业相结合的企业。</span>
+									<button class="szg-botton">我要提问</button>
+									<div class="szg-sj">
+										<span class="szg-span">2019-09-16</span><span class="szg-yd"></span>
+										<br />
+										<span class="szg-span">2019-09-14</span><span class="szg-yd"></span>
+
+									</div>
+									<div class="szg">
+
+										<span>我们的交流QQ群6-3-1-2-2-8-5-8-6</span>
+										<br />
+										<span>时之光中秋献礼！ICAT6在中秋佳节的上午10时登陆京东众筹，本次众筹项目，我司郑重承诺，项目只要达到提前发货的条件后，发起方会立刻申请提前发货，让喜欢并支持ICAT6的筹友们早日收货，一起体验ICAT6这台性能怪兽，喜欢就快快支持吧！祝大家中秋快乐！</span>
+
+										<img src="//img30.360buyimg.com/cf/s128x128_jfs/t1/83443/36/10058/223351/5d7c6cc7E306d2036/5d665e2323b39adc.jpg" data-src="//img30.360buyimg.com/cf/jfs/t1/83443/36/10058/223351/5d7c6cc7E306d2036/5d665e2323b39adc.jpg" style="width: 80px;height: 80px;" alt="">
+									</div>
+									<div class="szg-img">
+										<img src="img/zc-noAnswer.jpg" style="width: 300px;height: 200px;" />
+									</div>
+								</div>
+							</div>
+							<div class="am-tab-panel">
+								<div class="xmzy-xm" style="margin:0  10%;">
+
+									<video width="600px" height="450px" tabindex="-1" preload="auto" src="https://vod.300hu.com/4c1f7a6atransbjngwcloud1oss/6cda9542226441754583764993/v.f30.mp4" controls=""></video>
+									<h2 style="font-size: 20px;font-weight: bold;padding: 15px 0;font-size: 18px;">众筹故事</h2>
+									<img class="lazyout-detail" src="//img30.360buyimg.com/cf/jfs/t1/59607/25/10570/123844/5d81d261E65e4f4db/f13c6ae85adb3144.jpg" data-original="//img30.360buyimg.com/cf/jfs/t1/66615/9/9409/432810/5d70cdcbE47ea9f49/98ad584116a816f3.jpg" alt="" style="display: inline;height: 900px;">
+									<img class="lazyout-detail" src="//img30.360buyimg.com/cf/jfs/t1/54274/27/9994/113939/5d725cd4E9dd9378e/ce8b5c931bb3e950.jpg" data-original="//img30.360buyimg.com/cf/jfs/t1/60963/37/9112/376382/5d70cdd1E2a714f90/7bb6b8ef836cc410.jpg" alt="" style="display: inline;height: 900px;">
+									<img class="lazyout-detail" src="//img30.360buyimg.com/cf/jfs/t1/80597/40/10673/498259/5d81d19fE8be00ba0/4468c8c9c66a6acd.gif" data-original="//img30.360buyimg.com/cf/jfs/t1/54248/18/9798/320580/5d70cdddEb62086b8/82c924d79dbe928a.jpg" alt="" style="display: inline;height: 300px;">
+									<img class="lazyout-detail" src="//img30.360buyimg.com/cf/jfs/t1/41841/21/14253/506739/5d725cd8E93d04c2f/6840e3eed7fcb098.jpg" data-original="//img30.360buyimg.com/cf/jfs/t1/64864/23/9301/419895/5d70cdd7E9217956f/fadcfe13b35bf769.jpg" alt="" style="display: inline;height: 900px;">
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+				<div class="xmzy-right am-u-md-4">
+					<div class="iphone">
+						<img src="//static.360buyimg.com/finance/crowdfunding/details/2.0.0/images/details-jrapp-ewm.png" alt="">
+						<p style="float: right;">手机专享众筹超低价<br /> <span>下载京东金融APP可享 &nbsp;</span></p>
+						<!--<p style="margin-left: 21%;">无码</p>-->
+					</div>
+					<div class="xmzy-fq">
+
+						<p>项目发起人</p>
+						<hr/>
+						<img src="//i.jd.com/commons/img/no-img_mid_.jpg" alt="">
+						<div class="img-r" style="float: right;">
+
+							<span>lightime...</span>
+
+							<i class="fa icon-v" aria-hidden="true" style="color: orangered;position: relative;background-position: 0 -1088px;"><div class="sm sm1"></div></i>
+							<i class="fa icon-h" aria-hidden="true" style="color: orange;position: relative;"><div class="sm sm2"></div></i>
+
+							<div style="width:200px;font-size: 14px;color: #a5a5a5;margin: 4px 0;">时之光，取时光永恒之意，是一家致力...</div>
+
+							<p style="font-size: 14px;color: #323232; margin: 10px;">
+								发起&nbsp;<span>3</span> 支持&nbsp;
+								<span>0</span>
+							</p>
+							<button type="button" class="am-btn am-btn-primary">发送私信</button>
+							<button type="button" class="am-btn am-btn-primary"><i class="fa fa-heartbeat" aria-hidden="true" style="color: red;"></i>&nbsp;在线私聊</button>
+						</div>
+
+					</div>
+
+					<div class="xmzy-mj">
+						<div class="mj-bj">
+							<div class="bj-left" style="float: left;">
+								<span>20.0<b>元</b></span><span> 众筹满减券</span>
+								<h5>适用平台：不限</h5>
+								<p>满400.0元可使用</p>
+								<p>2019.09.29~ 2019.10.18</p>
+							</div>
+							<div class="bj-right">
+								<p>立即领取</p>
+							</div>
+						</div>
+					</div>
+					<div class="xmzy-zc">
+
+						<p>￥25 <span style="float: right; font-size: 12px;margin-top: 3px;">12位支持者</span></p>
+						<hr/>
+						<span class="limit-num">限额 <span>300</span>份 | 剩余 <span>285</span>份</span>
+
+						<p>感谢您的支持！您将以众筹价格 25元获得ICAT 6无人机桨叶一套。</p>
+						<div id="">
+							<img src="//img30.360buyimg.com/cf/s128x128_jfs/t1/67657/13/10010/107841/5d7918a3E3fbdbfec/96eb35669bb3517c.jpg" width="70px" height="70px">
+						</div>
+						<p>配送费用： <span>免运费</span></p>
+						<p>预计回报发送时间：<span>项目众筹成功后<span style="color: red;">20</span>天内</span>
+						</p>
+						<button type="button" class="am-btn am-btn-primary">支持￥25</button>
+
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+		</div>
+
+		<!--页尾-->
+		<div class="f-copyright" style="position: relative; top: 0px;">
+			<div class="grid-1200 footerHolder">
+				<div class="footer-nav">
+					<p>
+						<a href="//jrhelp.jd.com/show/getProblemInfo?id=688" target="_blank" clstag="jr|keycount|jr_shouye|footer1">关于京东金融</a><span class="footer-nav-cut">|</span>
+						<a href="//jrhelp.jd.com/show/getProblemInfo?id=169" target="_blank" clstag="jr|keycount|jr_shouye|footer2">关于京东小金库</a><span class="footer-nav-cut">|</span>
+						<a href="//jrhelp.jd.com/show/getProblemInfo?id=244" target="_blank">关于京东白条</a><span class="footer-nav-cut">|</span>
+						<a href="https://www.jddglobal.com/" target="_blank">京东数科</a><span class="footer-nav-cut">|</span>
+						<a href="//jrhelp.jd.com/show/getProblemInfo-3061" target="_blank" clstag="jr|keycount|jr_shouye|zhishichanquan">知识产权</a><span class="footer-nav-cut">|</span>
+						<a href="//jrhelp.jd.com/show/getProblemInfo-1677" target="_blank" rel="nofollow" clstag="jr|keycount|jr_shouye|footer5">免责声明</a><span class="footer-nav-cut">|</span>
+						<a href="//union.jr.jd.com/" target="_blank" clstag="jr|keycount|jr_shouye|footer7">金融联盟</a><span class="footer-nav-cut">|</span>
+						<a href="//jrhelp.jd.com/show/getProblemInfo-2749" target="_blank" rel="nofollow" clstag="jr|keycount|jr_shouye|footer8">平台协议</a><span class="footer-nav-cut">|</span>
+						<a href="//jrhelp.jd.com/show/getProblemInfo-2748" target="_blank" rel="nofollow" clstag="jr|keycount|jr_shouye|footer9">隐私政策</a><span class="footer-nav-cut">|</span>
+						<a class="item-kefu" href="https://jtalk.jd.com?entrance=10000&amp;source=web&amp;companyId=1" target="_blank" clstag="jr|keycount|jr_shouye|footer4">联系客服</a><span class="footer-nav-cut">|</span>
+						<a href="https://img30.360buyimg.com/jr_image/jfs/t26398/228/2024551290/150862/7048fb83/5bf51d0fN46d70792.jpg" target="_blank">营业执照</a>
+					</p>
+					<p>Copyright © 2004-2018 京东JD.com 版权所有<span class="footer-nav-cut">|</span>投资有风险，购买需谨慎</p>
+				</div>
+			</div>
+		</div>
+
+	</body>
+
+	<script>
+		
+		$(function() {
+			$('#doc-my-tabs').tabs();
+		})
+
+		//
+		$.ajax({
+			type: "get",
+			url: "http://47.97.123.93:81/api/Details/GetDetailsById?id=368",
+			
+			success: function(data) {	
+				console.log(data.data.PeopleNum)
+				var day1 = new Date(data.data.AddTime.substring(0, 10));
+				var day2 = new Date(data.data.EndTime.substring(0, 10));
+				console.log(day2)
+				var tianshu = (day2 - day1) / (1000 * 60 * 60 * 24);				
+				var str = data.data.EndTime;				
+				var hb = str.substring(0, 4) + "年" + str.substring(5, 7) + "月" + str.substring(8, 10)+ "日 "
+				var xmimg = `<div class="xm-img"><img src="${data.data.MinImg}"></div>`				
+				var pnum = `<h1 class="p-title">${data.data.Name}</h1>
+				<p class="p-cd" style="margin: 0;">已筹到</p>
+				<p class="p-num"><span>￥</span>${data.data.Money}</p>
+				<div class="am-progress">
+						<div class="am-progress-bar am-progress-bar-fuchsia" style="width:${(data.data.NowMoney/data.data.Money * 10000) / 100.00 + '%'}"></div>
+				</div>
+				<p class="p-jd"><span class="f2" style="color: rgb(161, 6, 224); font-size: 15px;font-weight:bold ;">当前进度${(data.data.NowMoney/data.data.Money * 10000) / 100.00 + '%'}</span><span class="fr1">${data.data.PeopleNum}名支持者</span></p>			
+				<p class="p-wz">此项目必须在<span class="f_red">${hb}</span>前得到<span class="f_red"><i style="font-style: normal">￥</i>${data.data.Money}</span> 的支持才可成功！ 剩余<span class="f_red"> ${tianshu}</span> 天!</p>
+				<button type="button" class="am-btn am-btn-primary button1"><i class="fa fa-heart-o" aria-hidden="true" ></i> 关注<span> (${data.data.zan})</span></button>
+				<button type="button" class="am-btn am-btn-primary button2"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 赞<span> (${data.data.guanzhu})</span></button>
+				<p style="color: #a5a5a5;font-size: 14px;margin: 25px 0 10px;">分享到</p>
+				<div class="xm-fx">
+
+						<button><i class="fa fa-weibo" aria-hidden="true"></i></button>
+						<button><i class="fa fa-tencent-weibo" aria-hidden="true"></i></button>
+						<button><i class="fa fa-star" aria-hidden="true"></i></button>
+						<button><i class="fa fa-eercast" aria-hidden="true"></i></button>
+						<button><i class="fa fa-users" aria-hidden="true"></i></button>
+						<button><i class="fa fa-weixin" aria-hidden="true"></i></button>
+					</div>
+				`
+                $('#xm-yc').append(xmimg)
+                $('#xm-right').append(pnum)
+				
+
+		}
+		});
+	</script>
+	<script type="text/javascript">
+		$.ajax({
+			type: "get",
+			url: "http://47.97.123.93:81/api/Category/GetCategorys?keyword=",
+			success: function(data) {
+				//				console.log(data.data[0].DisplayName)
+				//				console.log(data.data.length)
+
+				for(i = 0; i < 10; i++) {
+					var b = `<li><a href="#">${data.data[i].DisplayName}</a></li>`
+					var a = data.data[i].DisplayName
+					console.log(b)
+
+					$('#doc-topbar-collapseul').append(b)
+					//					return `<a href="#">data.data[i].DisplayName</a>`
+				}
+
+			}
+		});
+		
+		
+	</script>
+
+</html>

@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>后台</title>
+		<link rel="stylesheet" type="text/css" href="layui-v2.5.5/layui/css/layui.css" />
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+
+		<script type="text/javascript" charset="UTF-8" src="layui-v2.5.5/layui/layui.js"></script>
+
+	</head>
+
+	<body class="layui-layout-body">
+		<div class="layui-layout layui-layout-admin">
+			<div class="layui-header">
+				<div class="layui-logo">京东后台管理</div>
+				<!-- 头部区域（可配合layui已有的水平导航） -->
+				<!--<ul class="layui-nav layui-layout-left">
+      <li class="layui-nav-item"><a href="">控制台</a></li>
+      <li class="layui-nav-item"><a href="">商品管理</a></li>
+      <li class="layui-nav-item"><a href="">用户</a></li>
+      <li class="layui-nav-item">
+        <a href="javascript:;">其它系统</a>
+        <dl class="layui-nav-child">
+          <dd><a href="">邮件管理</a></dd>
+          <dd><a href="">消息管理</a></dd>
+          <dd><a href="">授权管理</a></dd>
+        </dl>
+      </li>
+    </ul>-->
+				<ul class="layui-nav layui-layout-right">
+					<!--<li class="layui-nav-item">
+        <a href="javascript:;">
+          <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
+          贤心
+        </a>
+        <dl class="layui-nav-child">
+          <dd><a href="">基本资料</a></dd>
+          <dd><a href="">安全设置</a></dd>
+        </dl>
+      </li>-->
+					<li class="layui-nav-item">
+						<a href="">退出</a>
+					</li>
+				</ul>
+			</div>
+
+			<div class="layui-side layui-bg-black">
+				<div class="layui-side-scroll">
+					<!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+					<ul class="layui-nav layui-nav-tree" lay-filter="test">
+						<li class="layui-nav-item layui-nav-itemed layui-this">
+							<a class="" href="jd-index.html">主页</a>
+						</li>
+						<li class="layui-nav-item layui-nav-itemed">
+							<a class="" href="javascript:;">设置</a>
+							<dl class="layui-nav-child">
+								<dd>
+									<a href="jd后台(1).html">幻灯片设置</a>
+								</dd>
+								<dd>
+									<a href="jd后台(2).html">众筹分类设置</a>
+								</dd>
+								<dd>
+									<a href="jd后台(3).html">商品分类设置</a>
+								</dd>
+
+							</dl>
+						</li>
+						<li class="layui-nav-item">
+							<a href="javascript:;">解决方案</a>
+							<dl class="layui-nav-child">
+								<dd>
+									<a href="javascript:;">列表一</a>
+								</dd>
+
+							</dl>
+						</li>
+
+					</ul>
+				</div>
+			</div>
+
+			<div class="layui-body">
+				<!-- 内容主体区域 -->
+				<div style="padding: 15px;">
+					<script type="text/html" id="form1">
+						<form class="layui-form" style="padding: 20px;">
+							<!-- 提示：如果你不想用form，你可以换成div等任何一个普通元素 -->
+							<div class="layui-form-item">
+								<label class="layui-form-label">标题：</label>
+								<div class="layui-input-block">
+									<input type="text" name="DisplayName" placeholder="请输入名字" autocomplete="off" class="layui-input" id="DisplayName">
+								</div>
+							</div>
+							<!--<div class="layui-form-item">
+								<label class="layui-form-label">时间：</label>
+								<div class="layui-input-block">
+									<input type="text" name="CreatTime" placeholder="请输入时间（只能输入时间）" autocomplete="off" class="layui-input" id="CreatTime">
+								</div>
+							</div>-->
+							<div class="layui-form-item">
+								<label class="layui-form-label">排序号：</label>
+								<div class="layui-input-block">
+									<input type="text" name="SN" placeholder="请输入排序号" autocomplete="off" class="layui-input" id="SN">
+								</div>
+							</div>
+
+							<div class="layui-form-item">
+								<label class="layui-form-label">是否显示：</label>
+								<div class="layui-input-block">
+
+									<input type="radio" name="Enable" value="1" title="是" checked>
+									<input type="radio" name="Enable" value="0" title="否">
+								</div>
+							</div>
+
+							<div class="layui-form-item">
+								<div class="layui-input-block">
+									<button class="layui-btn" lay-submit lay-filter="*">立即提交</button>
+									<button type="reset" class="layui-btn layui-btn-primary">重置</button>
+								</div>
+							</div>
+							<!-- 更多表单结构排版请移步文档左侧【页面元素-表单】一项阅览 -->
+						</form>
+					</script>
+					<div class="layui-inline">
+						<button class="layui-btn layuiadmin-btn-useradmin " lay-submit="" lay-filter="LAY-user-front-search">
+                                         <i class="layui-icon layui-icon-search layuiadmin-button-btn"></i>
+                                </button>
+						<button class="layui-btn layuiadmin-btn-useradmin" lay-submit="" onclick="Open('add')">
+                                         <i class="layui-icon layui-icon-add-1 layuiadmin-button-btn"></i>
+                        </button>
+					</div>
+					<table class="layui-hide" id="test" lay-filter="test">
+
+					</table>
+					<script type="text/html" id="barDemo">
+						<a class="layui-btn layui-btn-sm layui-btn layui-btn-warm " lay-event="edit">编辑</a>
+						<a class="layui-btn layui-btn-sm layui-btn layui-btn-danger" lay-event="delete">删除</a>
+					</script>
+
+				</div>
+
+			</div>
+
+			<div class="layui-footer">
+				<!-- 底部固定区域 -->
+				© layui.com - 底部固定区域
+			</div>
+		</div>
+		<script>
+			//JavaScript代码区域
+			layui.use('element', function() {
+				var element = layui.element;
+
+			});
+			layui.use('table', function() {
+				var table = layui.table;
+
+				table.render({
+					elem: '#test',
+					url: 'http://47.97.123.93:81/api/Category/GetCategorys?keyword=',
+
+					cellMinWidth: 80 //全局定义常规单元格的最小宽度，layui 2.2.1 新增
+						,
+					height: 'full-195',
+					page: true, //开启分页	
+					cols: [
+						[{
+								field: 'Id',
+								title: 'ID',
+								align: 'center',
+								sort: true
+							}, {
+								field: 'CreatTime',
+								title: '时间',
+
+								align: 'center',
+								templet: function(d) {
+
+									var time = d.CreatTime
+									console.log(time.split('T')[0])
+									var sj = time.split('T')[0] + " " + time.split('T')[1]
+									return sj
+								}
+							}, {
+								field: 'DisplayName',
+								title: '名字',
+								sort: true,
+								align: 'center'
+							}, {
+								field: 'SN',
+								title: '排序号',
+								align: 'center'
+							}, {
+								field: 'Enable',
+								title: '是否显示',
+								align: 'center',
+								sort: true,
+								templet: function(data) {
+
+									if(data.Enable == 1) {
+										return `<span style="color:green">是</span>`
+
+									} else {
+										return `<span style="color:red">否</span>`
+									}
+
+								}
+
+							},
+							{
+								field: 'caozuo',
+								title: '操作',
+								sort: true,
+								toolbar: '#barDemo',
+								align: 'center'
+							}
+
+						]
+					]
+				});
+				table.on('tool(test)', function(obj) { //注：tool 是工具条事件名，test 是 table 原始容器的属性 lay-filter="对应的值"
+					var data = obj.data, //获得当前行数据
+
+						layEvent = obj.event; //获得 lay-event 对应的值
+					console.log(data.Id)
+					if(layEvent === 'delete') {
+						layer.confirm('真的删除行么', function(index) {
+
+							$.ajax({
+								type: "get",
+								url: "http://47.97.123.93:81/api/Category/RemoveCategorys",
+								data: {
+									Id: data.Id
+								},
+								success: function(data) {
+									if(data.ResultCode == 1) {
+										obj.del(); //删除对应行（tr）的DOM结构
+										layer.close(index);
+
+										//向服务端发送删除指令
+										layer.msg("删除成功");
+									} else {
+										layer.msg(data.Message)
+									}
+
+								}
+							});
+						});
+					} else if(layEvent === 'edit') {
+
+						Open('edit', data)
+
+					}
+
+				});
+			});
+
+			function Open(caozuo, rowdata) {
+				//				console.log(rowdata)
+				if(caozuo == "add") {
+					layer.open({
+						title: '添加幻灯片',
+						type: 1,
+						content: $('#form1').html(),
+						closeBtn: 2 //bton样式
+
+					});
+
+					var f = document.forms[0]; //获取表单DOM
+					f.reset(); //使用reset()函数 
+					var myDate = new Date();
+					var sjo = myDate.toLocaleString('chinese', {
+						hour12: false
+					})
+
+					$("[name='CreatTime']").val(sjo)
+
+					console.log(sjo)
+
+				} else if(caozuo == "edit") {
+					layer.open({
+						title: '编辑幻灯片',
+						type: 1,
+						content: $('#form1').html(),
+						closeBtn: 2, //bton样式
+						success: function() {
+
+							//				console.log(rowdata.Enable)
+
+							$("[name='DisplayName']").val(rowdata.DisplayName)
+							$("[name='SN']").val(rowdata.SN)
+
+							$("[name='CreatTime']").val(rowdata.CreatTime)
+
+							$("input[name=Enable][value=1]").attr('checked', rowdata.Enable == 1 ? true : false)
+							$("input[name=Enable][value=0]").attr('checked', rowdata.Enable == 0 ? true : false)
+							form.render();
+
+							layui.use('form', function() {
+
+								form = layui.form;
+
+								//监听提交
+								form.on('submit(formDemo)', function(data) {
+									layer.msg(JSON.stringify(data.field));
+									return false;
+
+								});
+
+								form.on('submit(*)', function(data) {
+
+									//						console.log(data.field)
+
+									$.ajax({
+										type: "post",
+										url: "http://47.97.123.93:81/api/Category/EditCategorys",
+										data: {
+											Id: rowdata.Id,
+											SN: $("[name='SN']").val(),
+											DisplayName: $("[name='DisplayName']").val(),
+											Enable: $("[name='Enable']:checked").val(),
+											CreatTime: $("[name='CreatTime']").val(),
+
+										},
+										success: function(data) {
+
+											if(data.ResultCode == 1) {
+												console.log(rowdata.Enable)
+												layer.msg("修改数据成功")
+												setTimeout(function() {
+													layer.closeAll()
+												}, 1500)
+												//当前页的刷新
+
+												setTimeout('window.location.reload()', 1500);
+												//$(".layui-laypage-btn")[0].click() //方法2
+
+											} else {
+												layer.msg(data.message)
+											}
+
+										}
+									});
+									return false;
+
+								});
+							});
+
+						}
+
+					});
+
+				}
+
+			}
+		</script>
+		<script type="text/javascript">
+			//Demo
+			var form;
+			layui.use('form', function() {
+
+				form = layui.form;
+
+				//监听提交
+				form.on('submit(formDemo)', function(data) {
+					layer.msg(JSON.stringify(data.field));
+					return false;
+
+				});
+
+				layui.use('form', function() {
+
+					form.on('submit(*)', function(data) {
+
+						//											console.log(data.field)
+
+						$.ajax({
+							type: "post",
+							url: "http://47.97.123.93:81/api/Category/AddCategorys",
+							data: {
+								//								Id: rowdata.Id,
+								SN: data.field.SN,
+								Enable: data.field.Enable,
+								DisplayName: data.field.DisplayName,
+								CreatTime: data.field.CreatTime
+
+							},
+							success: function(data) {
+
+								if(data.ResultCode == 1) {
+
+									layer.msg(data.message)
+									setTimeout(function() {
+										layer.closeAll()
+									}, 1500)
+									//当前页的刷新
+
+									setTimeout('window.location.reload()', 1500);
+									//$(".layui-laypage-btn")[0].click() //方法2
+
+								} else {
+									layer.msg(data.message)
+								}
+
+							}
+						});
+						return false;
+					});
+
+				});
+			});
+		</script>
+
+	</body>
+
+</html>
